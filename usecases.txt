@@ -1,0 +1,6 @@
+Use cases:
+
+1. As a Survey Owner I can access the main page and generate a new survey which gives me a unique survey link
+2. As a Survey Owner I can see all the results for particular survey
+3. As a Respondent I can access an existing survey via a link and fill it out and see my score*
+4. As a Respondent I can share my survey score via a link
