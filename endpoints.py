@@ -1,15 +1,34 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from uuid import UUID
+from entities import Answer
 from model import SurveyAnswers
+from database import engine, Base, SessionLocal
+from sqlalchemy.orm import Session
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 
-@app.post("/surveys")
-async def create_survey(instance_name: str):
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+@app.post("/surveys", status_code=201)
+async def create_survey(instance_name: str, db: Session = Depends(get_db)):
+    answer = Answer()
+    answer.content = "testcontent"
+    answer.id = "testid2"
+    db.add(answer)
+    db.commit()
+    db.flush()
     return {
         "message": "created",
-        "instance_name": instance_name
+        "instance_name": answer.content
     }
 
 
@@ -24,7 +43,7 @@ async def get_survey(survey_id: UUID):
     return {"id": survey_id}
 
 
-@app.post("/surveys/{survey_id}/answers")
+@app.post("/surveys/{survey_id}/answers", status_code=201)
 async def complete_the_survey(survey_id: UUID, survey_answers: SurveyAnswers):
     score = 0.55
     return {
