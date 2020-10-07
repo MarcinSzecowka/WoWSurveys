@@ -3,28 +3,32 @@ from uuid import UUID
 from typing import List, Optional
 
 
-class SurveyAnswer(BaseModel):
-    question_id: UUID
-    answer_id: UUID
-
-
-class SurveyAnswers(BaseModel):
-    answers: list
-
-
-class SurveyResponse(BaseModel):
-    id: str
-    instance_name: str
-    questions: List
-
-
-class QuestionResponse(BaseModel):
-    id: str
-    content: str
-    answers: List
+class SurveyAnswersRequest(BaseModel):
+    question_id: str
+    answer_id: str
 
 
 class AnswerResponse(BaseModel):
     id: str
     content: str
-    is_correct: bool
+
+    class Config:
+        orm_mode = True
+
+
+class QuestionResponse(BaseModel):
+    id: str
+    content: str
+    answers: List[AnswerResponse]
+
+    class Config:
+        orm_mode = True
+
+
+class SurveyResponse(BaseModel):
+    id: str
+    instance_name: str
+    questions: List[QuestionResponse]
+
+    class Config:
+        orm_mode = True
