@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from entities import Question, Answer, Survey
 from typing import List
 
-from model import AnswerResponse
+from model import AnswerResponse, SurveyAnswersRequest
 
 
 def generate_random_questions(db: Session, instance_name: str, question_count: int):
@@ -22,3 +22,10 @@ def get_survey(db: Session, survey_id: str):
 
 def is_answer_correct(db: Session, answer_id: str):
     return db.query(Answer).filter(answer_id == Answer.id, Answer.is_correct).count() == 1
+
+
+def get_relevant_answer_from_request(survey_answers: List[SurveyAnswersRequest], question_id: str) -> str:
+    for answer in survey_answers:
+        if answer.question_id == question_id:
+            return answer.answer_id
+    return None
