@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, ForeignKey, Boolean, Table
+from sqlalchemy import Column, String, ForeignKey, Boolean, Table, Float
 from sqlalchemy.orm import relationship
 from database import Base
 
@@ -18,6 +18,7 @@ class Survey(Base):
     id = Column(String, primary_key=True, index=True)
     instance_name = Column(String)
     questions = relationship("Question", secondary=survey_questions_association_table)
+    results = relationship("SurveyResult")
 
 
 class Question(Base):
@@ -27,9 +28,23 @@ class Question(Base):
     instance_name = Column(String, index=True)
     answers = relationship("Answer", secondary=question_answers_association_table)
 
+    def get_correct_answer(self):
+        for answer in self.answers:
+            if answer.is_correct:
+                return answer
+        return None
+
 
 class Answer(Base):
     __tablename__ = "answers"
     id = Column(String, primary_key=True, index=True)
     content = Column(String)
     is_correct = Column(Boolean)
+
+
+class SurveyResult(Base):
+    __tablename__ = "survey_results"
+    id = Column(String, primary_key=True, index=True)
+    nickname = Column(String)
+    score = Column(Float)
+    survey = Column(String, ForeignKey('surveys.id'))
