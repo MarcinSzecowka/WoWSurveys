@@ -10,6 +10,9 @@ from entities import Survey, SurveyResult
 from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
 from utils import generate_random_questions, is_answer_correct
 
+
+data_file_name = "data.json"
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -21,6 +24,9 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+utils.initialize_database(data_file_name, next(get_db()))
 
 
 @app.post("/surveys", status_code=201, response_model=SurveyResponse)
