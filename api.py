@@ -8,8 +8,7 @@ import utils
 from database import engine, Base, SessionLocal
 from entities import Survey, SurveyResult
 from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
-from utils import generate_random_questions, is_answer_correct
-
+from utils import generate_random_questions
 
 data_file_name = "data.json"
 
@@ -29,7 +28,7 @@ def get_db():
 utils.initialize_database(data_file_name, next(get_db()))
 
 
-@app.post("/surveys", status_code=201, response_model=SurveyResponse)
+@app.post("/api/surveys", status_code=201, response_model=SurveyResponse)
 async def create_survey(instance_name: str, question_count: int = 2, db: Session = Depends(get_db)):
     survey = Survey()
     survey.id = str(uuid4())
@@ -38,27 +37,22 @@ async def create_survey(instance_name: str, question_count: int = 2, db: Session
     db.add(survey)
     db.commit()
     db.flush()
-
-    return {
-        "id": survey.id,
-        "instance_name": survey.instance_name,
-        "questions": survey.questions
-    }
+    return survey
 
 
-@app.get("/surveys/{survey_id}/results", response_model=List[SurveyResultResponse])
+@app.get("/api/surveys/{survey_id}/results", response_model=List[SurveyResultResponse])
 async def get_survey_results(survey_id: UUID, db: Session = Depends(get_db)):
     survey = utils.get_survey(db, str(survey_id))
     return survey.results
 
 
-@app.get("/surveys/{survey_id}", response_model=SurveyResponse)
+@app.get("/api/surveys/{survey_id}", response_model=SurveyResponse)
 async def get_survey(survey_id: UUID, db: Session = Depends(get_db)):
     survey = utils.get_survey(db, str(survey_id))
     return survey
 
 
-@app.post("/surveys/{survey_id}/answers", status_code=201)
+@app.post("/api/surveys/{survey_id}/answers", status_code=201)
 async def complete_the_survey(survey_id: UUID,
                               survey_answers: List[SurveyAnswersRequest],
                               nickname: str = Query(None, min_length=2, max_length=20),
