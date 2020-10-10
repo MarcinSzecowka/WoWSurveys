@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 import utils
 from database import engine, Base, SessionLocal
 from entities import Survey, SurveyResult
-from model import SurveyAnswersRequest, SurveyResponse
+from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
 from utils import generate_random_questions, is_answer_correct
 
 Base.metadata.create_all(bind=engine)
@@ -40,10 +40,10 @@ async def create_survey(instance_name: str, question_count: int = 2, db: Session
     }
 
 
-@app.get("/surveys/{survey_id}/results")
-async def get_survey_results(survey_id: UUID):
-    """Retrieve the survey and its results"""
-    return {"id": survey_id}
+@app.get("/surveys/{survey_id}/results", response_model=List[SurveyResultResponse])
+async def get_survey_results(survey_id: UUID, db: Session = Depends(get_db)):
+    survey = utils.get_survey(db, str(survey_id))
+    return survey.results
 
 
 @app.get("/surveys/{survey_id}", response_model=SurveyResponse)
