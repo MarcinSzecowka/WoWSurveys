@@ -58,22 +58,22 @@ async def complete_the_survey(survey_id: UUID,
                               nickname: str = Query(None, min_length=2, max_length=20),
                               db: Session = Depends(get_db)):
     survey = utils.get_survey(db, str(survey_id))
-    score = 0
+    correct_answers = 0
     survey_length = len(survey.questions)
     for question in survey.questions:
         relevant_answer_id = utils.get_relevant_answer_from_request(survey_answers, question.id)
         if relevant_answer_id is not None:
             if question.get_correct_answer().id == relevant_answer_id:
-                score += 1
+                correct_answers += 1
     survey_result = SurveyResult()
     survey_result.id = str(uuid4())
     survey_result.nickname = nickname
-    survey_result.score = score
+    survey_result.score = correct_answers / survey_length
     survey.results.append(survey_result)
     db.add(survey)
     db.commit()
     db.flush()
     return {
-        "score": score,
+        "score": correct_answers,
         "question_count": survey_length
     }
