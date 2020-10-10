@@ -32,3 +32,11 @@ class SurveyResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class SurveyResultResponse(BaseModel):
+    nickname: str
+    score: float
+
+    class Config:
+        orm_mode = True
