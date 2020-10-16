@@ -5,16 +5,18 @@
   <meta charset="utf-8">
   <title>XD</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="scripts/test.js"></script>
+  <script type="text/javascript" src="/scripts/test.js"></script>
 </head>
 
 <body>
-  <form>
-    <label for="dungeon">Select dungeon:</label>
-    <select name="dungeon" id="dungeon">
+  <form id="dungeon_form">
+    <label for="instance_name">Select dungeon:</label>
+    <select name="instance_name" id="instance_name">
       <option value="atal">Atal</option>
       <option value="Kings rest">Kings rest</option>
     </select>
+    <label for="question_count">How many questions</label>
+    <input type="number" name="question_count" id="question_count" min="2" value="2">
     <button type="button" onclick="submitForm()">Generate</button>
   </form>
 </body>

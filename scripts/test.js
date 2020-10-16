@@ -1,7 +1,7 @@
 function submitForm() {
-    var dungeon = $("#dungeon option:selected").val();
+    var form = $("#dungeon_form");
     $.ajax(
-      '/api/surveys?instance_name=' + dungeon,
+      `/api/surveys?${form.serialize()}`,
       {
         type: 'POST',
         success: function(data, status, xhr) {
@@ -9,5 +9,21 @@ function submitForm() {
         }
       }
     )
-    console.log('/api/surveys?instance_name=' + dungeon);
+    console.log('/api/surveys?' + form.serialize());
+}
+
+function getSurveyResultsBySurveyId(survey_id) {
+    $.ajax(
+      `/api/surveys/${survey_id}/results`,
+      {
+        type: 'GET',
+        success: function(data, status, xhr) {
+            var element = $("#results");
+            var results_table = document.createElement("TABLE");
+            for(var i; data.length(); i++){
+                results_table +=
+            }
+        }
+      }
+    )
 }
