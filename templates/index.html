@@ -4,9 +4,18 @@
 <head>
   <meta charset="utf-8">
   <title>XD</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/test.js"></script>
 </head>
 
 <body>
-
+  <form>
+    <label for="dungeon">Select dungeon:</label>
+    <select name="dungeon" id="dungeon">
+      <option value="atal">Atal</option>
+      <option value="Kings rest">Kings rest</option>
+    </select>
+    <button type="button" onclick="submitForm()">Generate</button>
+  </form>
 </body>
 </html>
