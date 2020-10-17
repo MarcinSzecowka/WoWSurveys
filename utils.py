@@ -4,7 +4,7 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from entities import Question, Answer, Survey
+from entities import Question, Answer, Survey, SurveyResult
 from model import SurveyAnswersRequest
 
 
@@ -15,7 +15,7 @@ def generate_random_questions(db: Session, instance_name: str, question_count: i
     return random.sample(all_questions, question_count)
 
 
-def get_survey(db: Session, survey_id: str):
+def get_survey(db: Session, survey_id: str) -> SurveyResult:
     return db.query(Survey).filter(Survey.id == survey_id).first()
 
 
