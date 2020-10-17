@@ -1,14 +1,13 @@
 from typing import List
-from uuid import UUID, uuid4
+from uuid import UUID
 
-from fastapi import FastAPI, Depends, Query, APIRouter
+from fastapi import Depends, Query, APIRouter
 from sqlalchemy.orm import Session
 
+import usecases
 import utils
 from database import engine, Base, SessionLocal
-from entities import Survey, SurveyResult
 from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
-from utils import generate_random_questions
 
 data_file_name = "data.json"
 
@@ -30,26 +29,17 @@ utils.initialize_database(data_file_name, next(get_db()))
 
 @api_router.post("/api/surveys", status_code=201, response_model=SurveyResponse)
 async def create_survey(instance_name: str, question_count: int = 2, db: Session = Depends(get_db)):
-    survey = Survey()
-    survey.id = str(uuid4())
-    survey.instance_name = instance_name
-    survey.questions = generate_random_questions(db, instance_name, question_count)
-    db.add(survey)
-    db.commit()
-    db.flush()
-    return survey
+    return usecases.create_survey(instance_name, question_count, db)
 
 
 @api_router.get("/api/surveys/{survey_id}/results", response_model=List[SurveyResultResponse])
 async def get_survey_results(survey_id: UUID, db: Session = Depends(get_db)):
-    survey = utils.get_survey(db, str(survey_id))
-    return survey.results
+    return usecases.get_survey_results(survey_id, db)
 
 
 @api_router.get("/api/surveys/{survey_id}", response_model=SurveyResponse)
 async def get_survey(survey_id: UUID, db: Session = Depends(get_db)):
-    survey = utils.get_survey(db, str(survey_id))
-    return survey
+    return usecases.get_survey(survey_id, db)
 
 
 @api_router.post("/api/surveys/{survey_id}/answers", status_code=201)
@@ -57,22 +47,7 @@ async def complete_the_survey(survey_id: UUID,
                               survey_answers: List[SurveyAnswersRequest],
                               nickname: str = Query(None, min_length=2, max_length=20),
                               db: Session = Depends(get_db)):
-    survey = utils.get_survey(db, str(survey_id))
-    correct_answers = 0
-    survey_length = len(survey.questions)
-    for question in survey.questions:
-        relevant_answer_id = utils.get_relevant_answer_from_request(survey_answers, question.id)
-        if relevant_answer_id is not None:
-            if question.get_correct_answer().id == relevant_answer_id:
-                correct_answers += 1
-    survey_result = SurveyResult()
-    survey_result.id = str(uuid4())
-    survey_result.nickname = nickname
-    survey_result.score = correct_answers / survey_length
-    survey.results.routerend(survey_result)
-    db.add(survey)
-    db.commit()
-    db.flush()
+    correct_answers, survey_length = usecases.complete_the_survey(survey_id, survey_answers, nickname, db)
     return {
         "score": correct_answers,
         "question_count": survey_length
