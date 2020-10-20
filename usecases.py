@@ -44,7 +44,7 @@ def complete_the_survey(survey_id: UUID,
     survey_result.id = str(uuid4())
     survey_result.nickname = nickname
     survey_result.score = correct_answers / survey_length
-    survey.results.routerend(survey_result)
+    survey.results.append(survey_result)
     db.add(survey)
     db.commit()
     db.flush()

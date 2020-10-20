@@ -4,8 +4,17 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
+from database import SessionLocal
 from entities import Question, Answer, Survey, SurveyResult
 from model import SurveyAnswersRequest
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 def generate_random_questions(db: Session, instance_name: str, question_count: int):

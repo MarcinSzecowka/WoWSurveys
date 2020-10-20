@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/scripts/test.js"></script>
-</head>
+{% extends "base.html" %}
+{% block body %}
 <body>
-    <div id="results"></div>
+<div class="container-fluid">
+    <div class="row"><h1 class="col text-center">{{ survey.instance_name }}</h1></div>
+    <ul class="list-group col-md-8 offset-md-2">
+        {% for question in survey.questions %}
+        <li class="list-group-item row">{{ question.content }}
+            <ul class="list-group">
+                {% for answer in question.answers %}
+                <li class="row list-group-item {% if answer.is_correct %}correct{% endif %}">{{ answer.content }}
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="row"><h2 class="col text-center">Results: </h2></div>
+    <ul class="list-group col-md-8 offset-md-2">
+        {% for result in survey.results %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-6 text-center">{{ result.nickname }}</div>
+                <div class="col-md-6 text-center">{{ result.score }}</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 </body>
-</html>
+{% endblock %}
