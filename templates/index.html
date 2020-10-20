@@ -1,13 +1,5 @@
-<!doctype html>
-
-<html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>XD</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/scripts/test.js"></script>
-</head>
-
+{% extends "base.html" %}
+{% block body %}
 <body>
   <form id="dungeon_form">
     <label for="instance_name">Select dungeon:</label>
@@ -20,4 +12,4 @@
     <button type="button" onclick="submitForm()">Generate</button>
   </form>
 </body>
-</html>
+{% endblock %}

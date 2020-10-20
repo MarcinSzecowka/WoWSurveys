@@ -6,6 +6,6 @@ from templates import templates_router
 
 
 app = FastAPI()
-app.mount('/scripts', app=StaticFiles(directory='scripts'), name='scripts')
+app.mount('/assets', app=StaticFiles(directory='assets'), name='assets')
 app.include_router(api_router)
 app.include_router(templates_router)
