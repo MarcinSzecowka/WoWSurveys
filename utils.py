@@ -3,10 +3,14 @@ import random
 from typing import List
 
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
 
 from database import SessionLocal
 from entities import Question, Answer, Survey, SurveyResult
 from model import SurveyAnswersRequest
+
+
+GENERIC_INSTANCE_NAME = "GENERIC"
 
 
 def get_db():
@@ -18,7 +22,9 @@ def get_db():
 
 
 def generate_random_questions(db: Session, instance_name: str, question_count: int):
-    all_questions = db.query(Question).filter(Question.instance_name == instance_name).all()
+    all_questions = db.query(Question)\
+        .filter(or_(Question.instance_name == instance_name, Question.instance_name == GENERIC_INSTANCE_NAME))\
+        .all()
     if question_count > len(all_questions):
         return all_questions
     return random.sample(all_questions, question_count)
