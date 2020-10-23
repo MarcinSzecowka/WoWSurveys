@@ -29,3 +29,7 @@ async def get_survey(survey_id: UUID, request: Request, db: Session = Depends(ge
     survey = usecases.get_survey(survey_id, db)
     return templates.TemplateResponse("survey_form.html", {"request": request, "survey": survey})
 
+
+@templates_router.get("/result", response_class=HTMLResponse)
+async def get_user_result(request: Request):
+    return templates.TemplateResponse("survey_user_result.html", {"request": request})

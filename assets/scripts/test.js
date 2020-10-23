@@ -31,6 +31,7 @@ function submitResultsForm(event) {
 
     var surveyId = getSurveyIdFromPathname();
     var nickname = $("#nickname").val();
+    var dungeon_name = $("#dungeon_name")[0].innerText
 
     $.ajax(
       `/api/surveys/${surveyId}/answers?nickname=${nickname}`,
@@ -38,7 +39,9 @@ function submitResultsForm(event) {
         type: 'POST',
         data: JSON.stringify(answers_table),
         success: function(data, status, xhr) {
-
+            window.localStorage.setItem("recent_survey_id", surveyId);
+            window.localStorage.setItem("recent_survey_dungeon_name", dungeon_name);
+            window.localStorage.setItem(surveyId, data.score);
         }
       }
     )
