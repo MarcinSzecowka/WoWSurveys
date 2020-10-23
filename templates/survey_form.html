@@ -25,10 +25,10 @@
         </ul>
         <div class="row">
             <div class="col mt-3">
-                <input id="nickname" type="text" class="float-md-right h-100 text-center" placeholder="Nickname" required>
+                <input id="nickname" type="text" class="float-md-right h-100 text-center" placeholder="Nickname" required oninput="onInput(event)" minlength="3">
             </div>
             <div class="col mt-3">
-                <button type="button" class="btn btn-primary" onclick="submitResultsForm()">Submit</button>
+                <button id="submit" type="button" class="btn btn-primary" onclick="submitResultsForm(event)" disabled>Submit</button>
             </div>
         </div>
     </form>
