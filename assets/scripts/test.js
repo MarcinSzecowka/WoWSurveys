@@ -1,4 +1,4 @@
-function submitForm() {
+function submitSurveyCreationForm() {
     var form = $("#dungeon_form");
     $.ajax(
       `/api/surveys?${form.serialize()}`,
@@ -9,20 +9,36 @@ function submitForm() {
         }
       }
     )
-    console.log('/api/surveys?' + form.serialize());
 }
 
-function getSurveyResultsBySurveyId(survey_id) {
+
+function getSurveyIdFromPathname() {
+    var path = window.location.pathname.split("/");
+    return path[path.length - 1];
+}
+
+
+function submitResultsForm() {
+    var answers_table = []
+    var filled_form = $("#filled_dungeon_form").serialize();
+    for (pair of filled_form.split("&")) {
+        split_pair = pair.split("=")
+        answers_table.push({
+            "question_id": split_pair[0],
+            "answer_id": split_pair[1]
+        })
+    }
+
+    var surveyId = getSurveyIdFromPathname();
+    var nickname = $("#nickname").val();
+
     $.ajax(
-      `/api/surveys/${survey_id}/results`,
+      `/api/surveys/${surveyId}/answers?nickname=${nickname}`,
       {
-        type: 'GET',
+        type: 'POST',
+        data: JSON.stringify(answers_table),
         success: function(data, status, xhr) {
-            var element = $("#results");
-            var results_table = document.createElement("TABLE");
-            for(var i; data.length(); i++){
-                results_table +=
-            }
+
         }
       }
     )

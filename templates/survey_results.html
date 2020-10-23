@@ -22,7 +22,7 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col-md-6 text-center">{{ result.nickname }}</div>
-                <div class="col-md-6 text-center">{{ result.score }}</div>
+                <div class="col-md-6 text-center">{{ "%.0f"|format(result.score * 100) }}%</div>
             </div>
         </li>
         {% endfor %}
