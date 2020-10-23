@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+<div class="container-fluid">
+    <div class="row"><h1 id="dungeon_name" class="col text-center"></h1></div>
+    <div class="row text-center">
+        <div class="col-md-6 text-right">Your score is:&nbsp;</div><div class="col-md-6 text-left" id="score_div"></div>
+    </div>
+</div>
+<script>
+     var survey_id = window.localStorage.getItem("recent_survey_id");
+     $( "#dungeon_name" )[0].innerHTML = window.localStorage.getItem("recent_survey_dungeon_name");
+     $( "#score_div" )[0].innerHTML = window.localStorage.getItem(survey_id);
+</script>
+</body>
+{% endblock %}
