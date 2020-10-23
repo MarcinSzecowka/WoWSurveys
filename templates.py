@@ -20,11 +20,11 @@ async def get_main_page(request: Request):
 
 @templates_router.get("/survey/{survey_id}/results", response_class=HTMLResponse)
 async def get_results_page(survey_id: UUID, request: Request, db: Session = Depends(get_db)):
-    survey = get_survey(survey_id, db)
+    survey = usecases.get_survey(survey_id, db)
     return templates.TemplateResponse("survey_results.html", {"request": request, "survey": survey})
 
 
-@templates_router.get("/surveys/{survey_id}", response_class=HTMLResponse)
+@templates_router.get("/survey/{survey_id}", response_class=HTMLResponse)
 async def get_survey(survey_id: UUID, request: Request, db: Session = Depends(get_db)):
     survey = usecases.get_survey(survey_id, db)
     return templates.TemplateResponse("survey_form.html", {"request": request, "survey": survey})

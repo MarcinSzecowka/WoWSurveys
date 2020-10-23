@@ -3,7 +3,7 @@
 <body>
 <div class="container-fluid">
     <div class="row"><h1 class="col text-center">{{ survey.instance_name }}</h1></div>
-    <form>
+    <form id="filled_dungeon_form">
         <ul class="list-group col-md-8 offset-md-2">
             {% for question in survey.questions %}
             <div class="form-check">
@@ -23,6 +23,14 @@
             </div>
             {% endfor %}
         </ul>
+        <div class="row">
+            <div class="col mt-3">
+                <input id="nickname" type="text" class="float-md-right h-100 text-center" placeholder="Nickname" required>
+            </div>
+            <div class="col mt-3">
+                <button type="button" class="btn btn-primary" onclick="submitResultsForm()">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 <script>
@@ -30,9 +38,6 @@
     var radButton = $(this).find('input[type=radio]');
     if ($(radButton).prop("checked") == false) {
         $(radButton).prop("checked", true);
-    }
-    else {
-        $(radButton).prop("checked", false);
     }
 });
 
