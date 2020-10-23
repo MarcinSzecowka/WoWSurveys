@@ -18,8 +18,8 @@ function getSurveyIdFromPathname() {
 }
 
 
-function submitResultsForm() {
-    var answers_table = []
+function submitResultsForm(event) {
+    var answers_table = [];
     var filled_form = $("#filled_dungeon_form").serialize();
     for (pair of filled_form.split("&")) {
         split_pair = pair.split("=")
@@ -42,4 +42,14 @@ function submitResultsForm() {
         }
       }
     )
+}
+
+function onInput(event) {
+    var button = $("#submit")[0];
+    var nickname = $("#nickname").val();
+    if (nickname.length < 3) {
+        button.disabled = true;
+    } else {
+        button.disabled = false;
+    }
 }
