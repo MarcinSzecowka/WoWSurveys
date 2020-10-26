@@ -1,19 +1,95 @@
 [
-    {
-        "id": "123123-12312-312312-3",
-        "content": "treść pytania",
-        "instance_name": "atal",
-        "answers": [
-            {
-                "id": "12312-312312-312312-213",
-                "content": "treść odpowiedzi",
-                "is_correct": false
-            },
-            {
-                "id": "12312-312312-312312-223",
-                "content": "treść odpowiedzi 2",
-                "is_correct": true
-            }
-        ]
-    }
+	{
+		"id": "4a49ca87-df20-4eaf-a624-74b0b8da4f50",
+		"content": "What does Inspiring affix do in mythic+?",
+		"instance_name": "GENERIC",
+		"answers": [
+			{
+				"id": "cd5b0bca-aa13-4a46-bd92-164ba4610e68",
+				"content": "Units with Inspired status effect buff nearby units increasing their health by 30% and damage done by 20%.",
+				"is_correct": false
+			},
+			{
+				"id": "26f40145-891c-4395-a8d4-d451bb8a7b99",
+				"content": "Units with Inspired status effect buff themselves which grants them immunity to crowd control effects.",
+				"is_correct": false
+			},
+			{
+				"id": "6a1faf7c-37e8-4cde-8515-cf6fb120cadd",
+				"content": "Units with Inspired status effect buff nearby units making them immune to crowd control effects.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"id": "428566bc-0956-4646-932a-50e6208e28d1",
+		"content": "Who does Inspired mythic+ affix buff apply to?"
+		"instance_name": "GENERIC",
+		"answers": [
+			{
+				"id": "aa621f28-0d26-4e9e-bb81-4aaa53b6b82c",
+				"content": "It applies only to the owner of the buff.",
+				"is_correct": false
+			},
+			{
+				"id": "849edea0-d551-4539-8fad-9a5da6e244d2",
+				"content": "It applies only to the units nearby the owner of the buff.",
+				"is_correct": true
+			},
+			{
+				"id": "ac9c8a34-7eb2-474b-b887-03be77e1278c",
+				"content": "It applies to both owner of the buff and all nearby units.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "389783bd-317e-4807-925e-b83146a97c34",
+		"content": "Who does Spiteful affix do in mythic+?"
+		"instance_name": "GENERIC",
+		"answers": [
+			{
+				"id": "bc4e8411-c80e-4490-a7ac-a97bc3b27d54",
+				"content": "Killing non-boss enemies spawns shades that fixate on a random player.",
+				"is_correct": true
+			},
+			{
+				"id": "c402c624-68ae-4fdd-aee7-7770a2b30200",
+				"content": "Attacking an enemy marked with Spiteful buff increases the damage dealt by this enemy to all party members.",
+				"is_correct": false
+			},
+			{
+				"id": "ac2e6e70-64a9-4e8f-a0e0-3b457ddb0f59",
+				"content": "Additional enemies are present throughout the dungeon.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "486da191-7cbe-43ef-9a23-f87fd2447d9b",
+		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?"
+		"instance_name": "GENERIC",
+		"answers": [
+			{
+				"id": "ed50d0c5-22f1-44bc-a085-639dac445452",
+				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
+				"is_correct": false
+			},
+			{
+				"id": "84fed5fe-0749-447e-84f3-e13985868dcd",
+				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and reduces damage taken by 15%. The buff lasts for 60 seconds.",
+				"is_correct": false
+			},
+			{
+				"id": "c278c324-ab50-4f22-bb26-806d456a9817",
+				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
+				"is_correct": true
+			},
+			{
+				"id": "c278c324-ab50-4f22-bb26-806d456a9817",
+				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60%. Additionally dealing damage when on full health grants a shield equal to 5% of the damage done. The shield starts to decay rapidly after 5 seconds. The Prideful buff lasts for 60 seconds.",
+				"is_correct": false
+			}
+		]
+	}
 ]
