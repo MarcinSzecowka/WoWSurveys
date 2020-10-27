@@ -29,9 +29,9 @@ async def get_survey_results(survey_id: UUID, db: Session = Depends(utils.get_db
     return usecases.get_survey_results(survey_id, db)
 
 
-@api_router.get("/api/surveys/{survey_id}", response_model=SurveyResponse)
-async def get_survey(survey_id: UUID, db: Session = Depends(utils.get_db)):
-    return usecases.get_survey(survey_id, db)
+@api_router.get("/api/surveys/{survey_public_id}", response_model=SurveyResponse)
+async def get_survey(survey_public_id: UUID, db: Session = Depends(utils.get_db)):
+    return usecases.get_survey_by_public_id(survey_public_id, db)
 
 
 @api_router.post("/api/surveys/{survey_id}/answers", status_code=201)

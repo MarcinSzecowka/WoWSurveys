@@ -34,6 +34,10 @@ def get_survey(db: Session, survey_id: str) -> SurveyResult:
     return db.query(Survey).filter(Survey.id == survey_id).first()
 
 
+def get_survey_by_public_id(db: Session, survey_public_id: str) -> SurveyResult:
+    return db.query(Survey).filter(Survey.public_id == survey_public_id).first()
+
+
 def is_answer_correct(db: Session, answer_id: str):
     return db.query(Answer).filter(answer_id == Answer.id, Answer.is_correct).count() == 1
 
