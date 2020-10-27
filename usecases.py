@@ -12,6 +12,7 @@ from utils import generate_random_questions
 def create_survey(instance_name: str, question_count: int, db: Session) -> Survey:
     survey = Survey()
     survey.id = str(uuid4())
+    survey.public_id = str(uuid4())
     survey.instance_name = instance_name
     survey.questions = generate_random_questions(db, instance_name, question_count)
     db.add(survey)
@@ -22,6 +23,10 @@ def create_survey(instance_name: str, question_count: int, db: Session) -> Surve
 
 def get_survey(survey_id: UUID, db: Session) -> Survey:
     return utils.get_survey(db, str(survey_id))
+
+
+def get_survey_by_public_id(survey_public_id: UUID, db: Session) -> Survey:
+    return utils.get_survey_by_public_id(db, str(survey_public_id))
 
 
 def get_survey_results(survey_id: UUID, db: Session) -> SurveyResult:

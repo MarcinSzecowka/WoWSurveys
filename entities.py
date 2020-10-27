@@ -16,6 +16,7 @@ question_answers_association_table = Table("question_answers", Base.metadata,
 class Survey(Base):
     __tablename__ = "surveys"
     id = Column(String, primary_key=True, index=True)
+    public_id = Column(String, index=True)
     instance_name = Column(String)
     questions = relationship("Question", secondary=survey_questions_association_table)
     results = relationship("SurveyResult")

@@ -56,3 +56,26 @@ function onInput(event) {
         button.disabled = false;
     }
 }
+
+function surveyResultsOnLoad() {
+    buildSurveyLink();
+    initializeClipboard();
+}
+
+function buildSurveyLink() {
+    var input_element = $("#share_link")[0];
+
+    var urlPrefix = window.location.href.split("/survey/")[0] + "/survey";
+    var survey_public_id = input_element.value;
+
+    input_element.value = `${urlPrefix}/${survey_public_id}`;
+}
+
+function initializeClipboard() {
+    var button = $("#btn_copy")[0];
+    var clipboard = new ClipboardJS(button);
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+        button.innerText = "Copied"
+    });
+}
