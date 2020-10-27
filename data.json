@@ -23,7 +23,7 @@
 	},
 	{
 		"id": "428566bc-0956-4646-932a-50e6208e28d1",
-		"content": "Who does Inspired mythic+ affix buff apply to?"
+		"content": "Who does Inspired mythic+ affix buff apply to?",
 		"instance_name": "GENERIC",
 		"answers": [
 			{
@@ -45,7 +45,7 @@
 	},
 	{
 		"id": "389783bd-317e-4807-925e-b83146a97c34",
-		"content": "Who does Spiteful affix do in mythic+?"
+		"content": "Who does Spiteful affix do in mythic+?",
 		"instance_name": "GENERIC",
 		"answers": [
 			{
@@ -67,7 +67,7 @@
 	},
 	{
 		"id": "486da191-7cbe-43ef-9a23-f87fd2447d9b",
-		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?"
+		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?",
 		"instance_name": "GENERIC",
 		"answers": [
 			{
@@ -86,7 +86,7 @@
 				"is_correct": true
 			},
 			{
-				"id": "c278c324-ab50-4f22-bb26-806d456a9817",
+				"id": "0c4e594a-8289-4205-be88-5e39baa4fa8d",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60%. Additionally dealing damage when on full health grants a shield equal to 5% of the damage done. The shield starts to decay rapidly after 5 seconds. The Prideful buff lasts for 60 seconds.",
 				"is_correct": false
 			}
