@@ -19,7 +19,7 @@ class Survey(Base):
     public_id = Column(String, index=True)
     questions = relationship("Question", secondary=survey_questions_association_table)
     results = relationship("SurveyResult")
-    instance_name_id = Column(String, ForeignKey("instances.name"))
+    instance_name = Column(String, ForeignKey("instances.name"))
     instance = relationship("Instance")
 
 
