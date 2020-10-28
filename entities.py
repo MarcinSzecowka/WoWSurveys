@@ -17,9 +17,10 @@ class Survey(Base):
     __tablename__ = "surveys"
     id = Column(String, primary_key=True, index=True)
     public_id = Column(String, index=True)
-    instance_name = Column(String)
     questions = relationship("Question", secondary=survey_questions_association_table)
     results = relationship("SurveyResult")
+    instance_name_id = Column(String, ForeignKey("instances.name"))
+    instance = relationship("Instance")
 
 
 class Question(Base):
@@ -27,6 +28,7 @@ class Question(Base):
     id = Column(String, primary_key=True, index=True)
     content = Column(String)
     instance_name = Column(String, index=True)
+    category = Column(String)
     answers = relationship("Answer", secondary=question_answers_association_table)
 
     def get_correct_answer(self):
@@ -49,3 +51,9 @@ class SurveyResult(Base):
     nickname = Column(String)
     score = Column(Float)
     survey = Column(String, ForeignKey('surveys.id'))
+
+
+class Instance(Base):
+    __tablename__ = "instances"
+    name = Column(String, primary_key=True, index=True)
+    category = Column(String)

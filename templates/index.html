@@ -10,8 +10,9 @@
             <div class="col text-center">
                 <label for="instance_name">Select dungeon:</label>
                 <select name="instance_name" id="instance_name">
-                    <option value="atal">Atal</option>
-                    <option value="Kings rest">Kings rest</option>
+                    {% for instance in instances %}
+                    <option value="{{instance.name}}">{{ instance.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>

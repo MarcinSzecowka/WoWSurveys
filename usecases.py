@@ -4,17 +4,18 @@ from uuid import uuid4, UUID
 from sqlalchemy.orm import Session
 
 import utils
-from entities import Survey, SurveyResult
+from entities import Survey, SurveyResult, Instance
 from model import SurveyAnswersRequest
 from utils import generate_random_questions
 
 
 def create_survey(instance_name: str, question_count: int, db: Session) -> Survey:
+    category = db.query(Instance).filter(Instance.name == instance_name).first()
     survey = Survey()
     survey.id = str(uuid4())
     survey.public_id = str(uuid4())
     survey.instance_name = instance_name
-    survey.questions = generate_random_questions(db, instance_name, question_count)
+    survey.questions = generate_random_questions(db, instance_name, category, question_count)
     db.add(survey)
     db.commit()
     db.flush()

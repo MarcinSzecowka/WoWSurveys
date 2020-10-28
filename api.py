@@ -9,14 +9,15 @@ import utils
 from database import engine, Base, SessionLocal
 from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
 
-data_file_name = "data.json"
+questions_data_name = "questions_data.json"
+instances_data_name = "instances_data.json"
 
 Base.metadata.create_all(bind=engine)
 
 api_router = APIRouter()
 
 
-utils.initialize_database(data_file_name, next(utils.get_db()))
+utils.initialize_database(questions_data_name, instances_data_name, next(utils.get_db()))
 
 
 @api_router.post("/api/surveys", status_code=201, response_model=SurveyResponse)

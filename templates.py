@@ -6,6 +6,8 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
 import usecases
+import utils
+from entities import Instance
 from utils import get_db
 
 templates_router = APIRouter()
@@ -14,8 +16,9 @@ templates = Jinja2Templates(directory="templates")
 
 
 @templates_router.get("/", response_class=HTMLResponse)
-async def get_main_page(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+async def get_main_page(request: Request, db: Session = Depends(get_db)):
+    instances = utils.get_instances(db)
+    return templates.TemplateResponse("index.html", {"request": request, "instances": instances})
 
 
 @templates_router.get("/survey/{survey_id}/results", response_class=HTMLResponse)
