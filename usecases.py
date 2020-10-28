@@ -33,11 +33,11 @@ def get_survey_results(survey_id: UUID, db: Session) -> SurveyResult:
     return utils.get_survey(db, str(survey_id)).results
 
 
-def complete_the_survey(survey_id: UUID,
+def complete_the_survey(survey_public_id: UUID,
                         survey_answers: List[SurveyAnswersRequest],
                         nickname: str,
-                        db: Session) -> Tuple[int, int]:
-    survey = utils.get_survey(db, str(survey_id))
+                        db: Session) -> float:
+    survey = utils.get_survey_by_public_id(db, str(survey_public_id))
     correct_answers = 0
     survey_length = len(survey.questions)
     for question in survey.questions:
@@ -53,4 +53,4 @@ def complete_the_survey(survey_id: UUID,
     db.add(survey)
     db.commit()
     db.flush()
-    return correct_answers, survey_length
+    return survey_result.score
