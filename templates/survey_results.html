@@ -20,6 +20,22 @@
         </div>
     </div>
 
+    <div class="row mt-4"><h2 class="col text-center">Results: </h2></div>
+    <ul class="list-group col-md-8 offset-md-2 mb-4">
+        {% for result in survey.results %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-6 text-center">{{ result.nickname }}</div>
+                <div class="col-md-6 text-center">{{ "%.0f"|format(result.score * 100) }}%</div>
+            </div>
+        </li>
+        {% else %}
+        <div class="row">
+            <div class="col-md text-center">There are no results yet</div>
+        </div>
+        {% endfor %}
+    </ul>
+
     <ul class="list-group col-md-8 offset-md-2">
         {% for question in survey.questions %}
         <li class="list-group-item row">{{ question.content }}
@@ -33,17 +49,6 @@
         {% endfor %}
     </ul>
 
-    <div class="row"><h2 class="col text-center">Results: </h2></div>
-    <ul class="list-group col-md-8 offset-md-2">
-        {% for result in survey.results %}
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-md-6 text-center">{{ result.nickname }}</div>
-                <div class="col-md-6 text-center">{{ "%.0f"|format(result.score * 100) }}%</div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
 </div>
 </body>
 {% endblock %}
