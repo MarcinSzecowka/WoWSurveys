@@ -2,7 +2,7 @@
 	{
 		"id": "4a49ca87-df20-4eaf-a624-74b0b8da4f50",
 		"content": "What does Inspiring affix do in mythic+?",
-		"instance_name": "GENERIC",
+		"category": "DUNGEON",
 		"answers": [
 			{
 				"id": "cd5b0bca-aa13-4a46-bd92-164ba4610e68",
@@ -24,7 +24,7 @@
 	{
 		"id": "428566bc-0956-4646-932a-50e6208e28d1",
 		"content": "Who does Inspired mythic+ affix buff apply to?",
-		"instance_name": "GENERIC",
+		"category": "DUNGEON",
 		"answers": [
 			{
 				"id": "aa621f28-0d26-4e9e-bb81-4aaa53b6b82c",
@@ -46,7 +46,7 @@
 	{
 		"id": "389783bd-317e-4807-925e-b83146a97c34",
 		"content": "Who does Spiteful affix do in mythic+?",
-		"instance_name": "GENERIC",
+		"category": "DUNGEON",
 		"answers": [
 			{
 				"id": "bc4e8411-c80e-4490-a7ac-a97bc3b27d54",
@@ -68,7 +68,7 @@
 	{
 		"id": "486da191-7cbe-43ef-9a23-f87fd2447d9b",
 		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?",
-		"instance_name": "GENERIC",
+		"category": "DUNGEON",
 		"answers": [
 			{
 				"id": "ed50d0c5-22f1-44bc-a085-639dac445452",
