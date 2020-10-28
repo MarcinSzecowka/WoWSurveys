@@ -2,15 +2,13 @@ import json
 import random
 from typing import List
 
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
 
 from database import SessionLocal
-from entities import Question, Answer, Survey, SurveyResult
+from entities import Question, Answer, Survey, SurveyResult, Instance
 from model import SurveyAnswersRequest
-
-
-GENERIC_INSTANCE_NAME = "GENERIC"
 
 
 def get_db():
@@ -21,9 +19,9 @@ def get_db():
         db.close()
 
 
-def generate_random_questions(db: Session, instance_name: str, question_count: int):
+def generate_random_questions(db: Session, instance_name: str, category: str, question_count: int):
     all_questions = db.query(Question)\
-        .filter(or_(Question.instance_name == instance_name, Question.instance_name == GENERIC_INSTANCE_NAME))\
+        .filter(or_(Question.instance_name == instance_name, Question.category == category))\
         .all()
     if question_count > len(all_questions):
         return all_questions
@@ -36,6 +34,10 @@ def get_survey(db: Session, survey_id: str) -> SurveyResult:
 
 def get_survey_by_public_id(db: Session, survey_public_id: str) -> SurveyResult:
     return db.query(Survey).filter(Survey.public_id == survey_public_id).first()
+
+
+def get_instances(db: Session) -> Instance:
+    return db.query(Instance).all()
 
 
 def is_answer_correct(db: Session, answer_id: str):
@@ -60,16 +62,37 @@ def convert_answers_to_entities(answers):
     return answers_list
 
 
-def initialize_database(data_file_name: str, db: Session):
+def initialize_database(questions_data_name: str, instances_data_name: str, db: Session):
+    initialize_questions(questions_data_name, db)
+    initialize_instances(instances_data_name, db)
+
+
+def initialize_instances(instances_data_name, db):
+    instances = load_data_from_file(instances_data_name)
+    for instance in instances:
+        instance_entity = Instance()
+        instance_entity.name = instance["name"]
+        instance_entity.category = instance["category"]
+        db.add(instance_entity)
+    try:
+        db.commit()
+        db.flush()
+    except IntegrityError:
+        print("Integrity error handled")
+
+
+
+def initialize_questions(questions_data_name, db):
     question_ids = get_questions_ids_from_database(db)
-    questions = load_questions_from_file(data_file_name)
+    questions = load_data_from_file(questions_data_name)
     question_count = 0
     for question in questions:
         if question["id"] not in question_ids:
             question_entity = Question()
             question_entity.id = question["id"]
             question_entity.content = question["content"]
-            question_entity.instance_name = question["instance_name"]
+            question_entity.instance_name = question.get("instance_name")
+            question_entity.category = question["category"]
             question_entity.answers = convert_answers_to_entities(question["answers"])
             db.add(question_entity)
             question_count += 1
@@ -81,7 +104,7 @@ def initialize_database(data_file_name: str, db: Session):
         print("Didn't load any new questions")
 
 
-def load_questions_from_file(data_file_name: str):
+def load_data_from_file(data_file_name: str):
     with open(data_file_name, encoding="utf-8") as json_file:
         data = json.load(json_file)
         return data

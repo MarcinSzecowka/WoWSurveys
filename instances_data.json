@@ -1,0 +1,38 @@
+[
+  {
+      "name": "The Necrotic Wake",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Plaguefall",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Mists of Tirna Scithe",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Halls of Atonement",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Theater of Pain",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "De Other Side",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Spires of Ascension",
+      "category": "DUNGEON"      
+  },
+  {
+      "name": "Sanguine Depths",
+      "category": "DUNGEON"
+  },
+  {
+      "name": "Castle Nathria",
+      "category": "RAID"
+  }
+]
