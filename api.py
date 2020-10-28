@@ -34,13 +34,12 @@ async def get_survey(survey_public_id: UUID, db: Session = Depends(utils.get_db)
     return usecases.get_survey_by_public_id(survey_public_id, db)
 
 
-@api_router.post("/api/surveys/{survey_id}/answers", status_code=201)
-async def complete_the_survey(survey_id: UUID,
+@api_router.post("/api/surveys/{survey_public_id}/answers", status_code=201)
+async def complete_the_survey(survey_public_id: UUID,
                               survey_answers: List[SurveyAnswersRequest],
                               nickname: str = Query(None, min_length=2, max_length=20),
                               db: Session = Depends(utils.get_db)):
-    correct_answers, survey_length = usecases.complete_the_survey(survey_id, survey_answers, nickname, db)
+    score = usecases.complete_the_survey(survey_public_id, survey_answers, nickname, db)
     return {
-        "score": correct_answers,
-        "question_count": survey_length
+        "score": score
     }

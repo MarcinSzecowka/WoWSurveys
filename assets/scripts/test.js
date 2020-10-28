@@ -39,9 +39,11 @@ function submitResultsForm(event) {
         type: 'POST',
         data: JSON.stringify(answers_table),
         success: function(data, status, xhr) {
+            console.log(data);
             window.localStorage.setItem("recent_survey_id", surveyId);
             window.localStorage.setItem("recent_survey_dungeon_name", dungeon_name);
             window.localStorage.setItem(surveyId, data.score);
+            window.location.href = '/result';
         }
       }
     )
