@@ -67,10 +67,10 @@ function surveyResultsOnLoad() {
 function buildSurveyLink() {
     var input_element = $("#share_link")[0];
 
-    var urlPrefix = window.location.href.split("/survey/")[0] + "/survey";
-    var survey_public_id = input_element.value;
+    var urlPrefix = window.location.href.split("/survey/")[0];
+    var survey_short_id = input_element.value;
 
-    input_element.value = `${urlPrefix}/${survey_public_id}`;
+    input_element.value = `${urlPrefix}/${survey_short_id}`;
 }
 
 function initializeClipboard() {

@@ -1,10 +1,11 @@
+import datetime
 from typing import List, Tuple
 from uuid import uuid4, UUID
 
 from sqlalchemy.orm import Session
-
+import time
 import utils
-from entities import Survey, SurveyResult, Instance
+from entities import Survey, SurveyResult, Instance, ShortId
 from model import SurveyAnswersRequest
 from utils import generate_random_questions
 
@@ -15,8 +16,14 @@ def create_survey(instance_name: str, question_count: int, db: Session) -> Surve
     survey.id = str(uuid4())
     survey.public_id = str(uuid4())
     survey.instance = instance
-
     survey.questions = generate_random_questions(db, instance_name, instance.category, question_count)
+    short_id = utils.generate_random_short_id(db)
+    timestamp = datetime.datetime.utcnow() + datetime.timedelta(days=7)
+    short_id_entity = ShortId()
+    survey.short_id = short_id_entity
+    short_id_entity.short_id = short_id
+    short_id_entity.expiration_date_utc = timestamp
+    short_id_entity.public_id = survey.public_id
     db.add(survey)
     db.commit()
     db.flush()
@@ -56,3 +63,8 @@ def complete_the_survey(survey_public_id: UUID,
     db.commit()
     db.flush()
     return survey_result.score
+
+
+def is_path_a_short_id(any_path: str, db: Session):
+    return db.query(ShortId).filter(ShortId.short_id == any_path).count() == 1
+
