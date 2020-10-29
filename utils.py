@@ -1,5 +1,6 @@
 import json
 import random
+import string
 from typing import List
 
 from sqlalchemy.exc import IntegrityError
@@ -7,7 +8,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_
 
 from database import SessionLocal
-from entities import Question, Answer, Survey, SurveyResult, Instance
+from entities import Question, Answer, Survey, SurveyResult, Instance, ShortId
 from model import SurveyAnswersRequest
 
 
@@ -81,7 +82,6 @@ def initialize_instances(instances_data_name, db):
         print("Integrity error handled")
 
 
-
 def initialize_questions(questions_data_name, db):
     question_ids = get_questions_ids_from_database(db)
     questions = load_data_from_file(questions_data_name)
@@ -116,3 +116,14 @@ def get_questions_ids_from_database(db: Session):
     for question in questions:
         question_ids.append(question.id)
     return question_ids
+
+
+def generate_random_short_id(db: Session) -> str:
+    all_short_ids = db.query(ShortId).with_entities(ShortId.short_id).all()
+    new_short_id = None
+    is_short_id_unique = False
+    while not is_short_id_unique:
+        new_short_id = "".join(random.choices(string.ascii_letters, k=5))
+        if new_short_id not in all_short_ids:
+            is_short_id_unique = True
+    return new_short_id

@@ -4,10 +4,11 @@ from fastapi import APIRouter, Request, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
+from starlette.responses import RedirectResponse
 
 import usecases
 import utils
-from entities import Instance
+from entities import Instance, ShortId
 from utils import get_db
 
 templates_router = APIRouter()
@@ -40,3 +41,12 @@ async def get_survey(public_survey_id: UUID, request: Request, db: Session = Dep
 @templates_router.get("/result", response_class=HTMLResponse)
 async def get_user_result(request: Request):
     return templates.TemplateResponse("survey_user_result.html", {"request": request})
+
+
+@templates_router.get("/{short_id}", response_class=HTMLResponse)
+async def redirect(short_id: str, db: Session = Depends(get_db)):
+    if usecases.is_path_a_short_id(short_id, db):
+        new_path = db.query(ShortId).filter(ShortId.short_id == short_id).first()
+        return RedirectResponse("/survey/" + new_path.public_id)
+    else:
+        return RedirectResponse("/")
