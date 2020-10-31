@@ -2,33 +2,31 @@
 {% block body %}
 <body>
 <div class="container-fluid">
-    <div class="row"><h1 id="dungeon_name" class="col text-center">{{ survey.instance_name }}</h1></div>
+    <div class="row"><h1 id="dungeon_name" class="col text-center mb-5">{{ survey.instance_name }}</h1></div>
     <form id="filled_dungeon_form">
-        <ul class="list-group col-md-8 offset-md-2">
+        <ul class="list-group shadowed col-md-8 offset-md-2 mb-3">
             {% for question in survey.questions %}
-            <div class="form-check">
-                <li class="list-group-item row">{{ question.content }}
-                    <ul class="list-group">
+                <li class="list-group-item styled-list-item row"><div class="secondary-text">Question {{loop.index}}</div> {{ question.content }}
+                    <ul class="list-group mt-4 mb-4">
                         {% for answer in question.answers %}
-                        <li class="row list-group-item input-group">
-                            <input class="form-check-input" type="radio" name="{{ question.id }}" id="{{ answer.id}}"
+                        <li class="row answer clickable styled-list-item list-group-item" onmousedown="onAnswerSelected(event)">
+                            <input class="form-check-input clickable" type="radio" name="{{ question.id }}" id="{{ answer.id }}"
                                    value="{{ answer.id }}">
-                            <label class="form-check-label" for="{{ answer.id}}">
-                                <span>{{ answer.content }}</span>
+                            <label class="form-check-label clickable" for="{{ answer.id }}">
+                                <span class="secondary-text">{{ loop.index }}.</span><span class="ml-3">{{ answer.content }}</span>
                             </label>
                         </li>
                         {% endfor %}
                     </ul>
                 </li>
-            </div>
             {% endfor %}
         </ul>
-        <div class="row">
-            <div class="col mt-3">
-                <input id="nickname" type="text" class="float-md-right h-100 text-center" placeholder="Nickname" required oninput="onInput(event)" minlength="3">
+        <div class="row mt-5" id="submit-btn-row">
+            <div class="col-md-3 offset-md-3">
+                <input id="nickname" type="text" class="input-wide float-md-right h-100 text-center" placeholder="Nickname" required oninput="onInput(event)" minlength="3">
             </div>
-            <div class="col mt-3">
-                <button id="submit" type="button" class="btn btn-primary" onclick="submitResultsForm(event)" disabled>Submit</button>
+            <div class="col-md-3">
+                <button id="submit" type="button" class="button-wide btn btn-secondary" onclick="submitResultsForm(event)" disabled>Submit</button>
             </div>
         </div>
     </form>

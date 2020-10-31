@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
+from starlette.exceptions import HTTPException
 from starlette.staticfiles import StaticFiles
 
 from api import api_router

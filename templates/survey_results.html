@@ -21,6 +21,7 @@
     </div>
 
     <div class="row mt-5"><h2 class="col text-center">Results: </h2></div>
+    {% if survey.results|length != 0 %}
     <ul class="list-group shadowed results col-md-8 offset-md-2 mb-5">
         {% for result in survey.results %}
         <li class="list-group-item styled-list-item result-item">
@@ -29,12 +30,13 @@
                 <div class="col-md-6 text-center">{{ "%.0f"|format(result.score * 100) }}%</div>
             </div>
         </li>
-        {% else %}
-        <div class="row">
-            <div class="col-md text-center">There are no results yet</div>
-        </div>
         {% endfor %}
     </ul>
+    {% else %}
+    <div class="row">
+        <div class="col-md text-center mb-5">There are no results yet</div>
+    </div>
+    {% endif %}
 
     <ul class="list-group shadowed col-md-8 offset-md-2 mb-5">
         {% for question in survey.questions %}
