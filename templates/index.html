@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12 row mt-5 text-center">
                 <label class="col" for="instance_name">Instance</label>
-                <select class="col" name="instance_name" id="instance_name">
+                <select class="col input-wide" name="instance_name" id="instance_name">
                     {% for instance in instances %}
                     <option value="{{instance.name}}">{{ instance.name }}</option>
                     {% endfor %}
@@ -23,7 +23,7 @@
 
         <div class="row">
             <div class="col text-center mt-4 mb-5">
-                <button type="button" class="btn_generate btn btn-secondary" onclick="submitSurveyCreationForm()">Generate</button>
+                <button type="button" class="button-wide btn btn-secondary" onclick="submitSurveyCreationForm()">Generate</button>
             </div>
         </div>
     </form>

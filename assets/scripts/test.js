@@ -81,3 +81,11 @@ function initializeClipboard() {
         button.innerText = "Copied"
     });
 }
+
+function onAnswerSelected(event) {
+    var currentAnswersGroup = $(event.currentTarget)[0].parentElement
+    $(currentAnswersGroup).find(".answer").toArray().forEach(answer => answer.classList.remove("selected"));
+    event.currentTarget.classList.add("selected");
+    var inputToCheck = $(event.currentTarget).find("input")[0];
+    inputToCheck.checked = true;
+}

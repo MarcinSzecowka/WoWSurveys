@@ -4,14 +4,17 @@
 <div class="container-fluid">
     <div class="row"><h1 id="dungeon_name" class="col text-center"></h1></div>
     <div class="row text-center">
-        <div class="col-md-6 text-right" id="score_div"></div><div class="col-md-6 text-left"> of your answers were correct</div>
+        <div class="col">
+            <span id="score"></span><span> of your answers were correct</span>
+            <span><br>Your score has been submitted and is visible for the survey owner</span>
+        </div>
     </div>
 </div>
 <script>
      var survey_id = window.localStorage.getItem("recent_survey_id");
      $( "#dungeon_name" )[0].innerHTML = window.localStorage.getItem("recent_survey_dungeon_name");
      var score = window.localStorage.getItem(survey_id);
-     $( "#score_div" )[0].innerHTML = (score * 100) + "%";
+     $( "#score" )[0].innerHTML = (score * 100) + "%";
 </script>
 </body>
 {% endblock %}
