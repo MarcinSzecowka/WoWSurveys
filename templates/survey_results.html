@@ -2,9 +2,9 @@
 {% block body %}
 <body onload="surveyResultsOnLoad()">
 <div class="container-fluid">
-    <div class="row"><div class="col text-center">You can see your</div></div>
+    <div class="row mt-5"><div class="col text-center">You can see your</div></div>
     <div class="row"><h1 class="col text-center">{{ survey.instance_name }}</h1></div>
-    <div class="row"><div class="col text-center">survey below!</div></div>
+    <div class="row mb-5"><div class="col text-center">survey below!</div></div>
 
     <div class="row"><div class="col text-center">Share it using this link</div></div>
     <div class="row justify-content-md-center">
@@ -20,10 +20,10 @@
         </div>
     </div>
 
-    <div class="row mt-4"><h2 class="col text-center">Results: </h2></div>
-    <ul class="list-group col-md-8 offset-md-2 mb-4">
+    <div class="row mt-5"><h2 class="col text-center">Results: </h2></div>
+    <ul class="list-group shadowed results col-md-8 offset-md-2 mb-5">
         {% for result in survey.results %}
-        <li class="list-group-item">
+        <li class="list-group-item styled-list-item result-item">
             <div class="row">
                 <div class="col-md-6 text-center">{{ result.nickname }}</div>
                 <div class="col-md-6 text-center">{{ "%.0f"|format(result.score * 100) }}%</div>
@@ -36,12 +36,14 @@
         {% endfor %}
     </ul>
 
-    <ul class="list-group col-md-8 offset-md-2">
+    <ul class="list-group shadowed col-md-8 offset-md-2 mb-5">
         {% for question in survey.questions %}
-        <li class="list-group-item row">{{ question.content }}
-            <ul class="list-group">
+        <li class="list-group-item row styled-list-item">
+            <div class="secondary-text">Question {{loop.index}}</div> {{ question.content }}
+            <ul class="list-group mt-4 mb-4">
                 {% for answer in question.answers %}
-                <li class="row list-group-item {% if answer.is_correct %}correct{% endif %}">{{ answer.content }}
+                <li class="row list-group-item styled-list-item answer {% if answer.is_correct %}correct{% endif %}"><span class="secondary-text">{{ loop.index }}.</span>
+                    <span class="ml-3">{{ answer.content }}</span>
                 </li>
                 {% endfor %}
             </ul>

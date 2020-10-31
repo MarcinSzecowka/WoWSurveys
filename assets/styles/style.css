@@ -1,3 +1,151 @@
 .correct {
     background-color: green;
 }
+
+.header {
+    background-color: #404040;
+    border-bottom: 2px solid #ffb300;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .25);
+}
+
+.bg {
+    box-sizing: border-box;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: url("/assets/images/background.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 4em;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+body {
+    color: #dbdbdb;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#dungeon_form {
+    background-color: #404040;
+    margin-left: 40em;
+    margin-right: 40em;
+    border-radius: 0.5em;
+}
+
+.shadowed {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .25);
+}
+
+.btn_generate {
+    border-radius: 2em;
+    color: #292929;
+    width: 10em;
+    background-color: #ffb300;
+}
+
+#instance_name {
+    color: #dbdbdb;
+    background-color: #404040;
+    border-width: 1px;
+    border-radius: 2em;
+    border-color: #ffb300;
+    text-align-last:center;
+}
+
+#instance_name:focus {
+   outline: none;
+}
+
+#question_count {
+    color: #dbdbdb;
+    background-color: #404040;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2em;
+    border-color: #ffb300;
+    text-align-last:center;
+}
+
+#question_count:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+#question_count::-webkit-outer-spin-button,
+#question_count::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#question_count[type=number] {
+  -moz-appearance: textfield;
+}
+
+#btn_copy {
+    border-radius: 2em;
+    color: #292929;
+    width: 7em;
+    background-color: #ffb300;
+}
+
+#btn_copy:hover {
+    border-radius: 2em;
+    color: #dbdbdb;
+    width: 7em;
+    background-color: #404040;
+}
+
+#share_link {
+    background-color: #404040;
+    color: #dbdbdb;
+    border-radius: 2em;
+    border-style: solid;
+    border-width: 1px;
+    text-align-last:center;
+}
+
+#share_link:focus {
+    outline: none;
+}
+
+.styled-list-item {
+    background-color: #404040;
+    color: #dbdbdb;
+    border-width: 0;
+    margin-left: 0;
+}
+
+.secondary-text {
+    font-weight: bold;
+    color: #6e6d6d;
+}
+
+.answer {
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: #303030;
+    border: 1px solid #6e6d6d;
+}
+
+.correct {
+    background-color: #2d452b;
+}
+
+.results {
+    padding-right: 0;
+}
+
+.result-item {
+    border-bottom: 1px solid #6e6d6d;
+}
+
+.result-item:last-of-type {
+    border-bottom: 0;
+}
