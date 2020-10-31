@@ -2,10 +2,12 @@ from sqlalchemy import Column, String, ForeignKey, Boolean, Table, Float, TIMEST
 from sqlalchemy.orm import relationship
 from database import Base
 
+
 survey_questions_association_table = Table("survey_questions", Base.metadata,
                                            Column("survey_id", String, ForeignKey("surveys.id")),
                                            Column("question_id", String, ForeignKey("questions.id"))
                                            )
+
 
 question_answers_association_table = Table("question_answers", Base.metadata,
                                            Column("question_id", String, ForeignKey("questions.id")),
@@ -15,8 +17,8 @@ question_answers_association_table = Table("question_answers", Base.metadata,
 
 class Survey(Base):
     __tablename__ = "surveys"
-    id = Column(String, primary_key=True, index=True)
-    public_id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True, index=True, unique=True)
+    public_id = Column(String, primary_key=True, index=True, unique=True)
     questions = relationship("Question", secondary=survey_questions_association_table)
     results = relationship("SurveyResult")
     instance_name = Column(String, ForeignKey("instances.name"))
@@ -26,7 +28,7 @@ class Survey(Base):
 
 class ShortId(Base):
     __tablename__ = "short_ids"
-    short_id = Column(String, primary_key=True)
+    short_id = Column(String, primary_key=True, unique=True)
     expiration_date_utc = Column(TIMESTAMP)
     public_id = Column(String, ForeignKey("surveys.public_id"))
     survey = relationship("Survey", back_populates="short_id")
@@ -34,7 +36,7 @@ class ShortId(Base):
 
 class Question(Base):
     __tablename__ = "questions"
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True, index=True, unique=True)
     content = Column(String)
     instance_name = Column(String, index=True)
     category = Column(String)
@@ -49,7 +51,7 @@ class Question(Base):
 
 class Answer(Base):
     __tablename__ = "answers"
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True, index=True, unique=True)
     content = Column(String)
     is_correct = Column(Boolean)
 

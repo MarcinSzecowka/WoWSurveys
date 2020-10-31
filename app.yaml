@@ -1,2 +1,7 @@
 runtime: python37
 entrypoint: uvicorn app:app
+env_variables:
+  DB_HOST: "wowsurveys:europe-west1:wowsurveysdb"
+  DB_NAME: "wowsurveysdb"
+  DB_USER: "wowsurveys"
+  DB_PASSWORD: "wowsurveyspass"
