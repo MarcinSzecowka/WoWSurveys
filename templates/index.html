@@ -2,14 +2,11 @@
 {% block body %}
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <h1 class="col text-center">WoW Surveys</h1>
-    </div>
-    <form id="dungeon_form">
+    <form id="dungeon_form" class="shadowed mt-5">
         <div class="row">
-            <div class="col text-center">
-                <label for="instance_name">Select dungeon:</label>
-                <select name="instance_name" id="instance_name">
+            <div class="col-md-12 row mt-5 text-center">
+                <label class="col" for="instance_name">Instance</label>
+                <select class="col" name="instance_name" id="instance_name">
                     {% for instance in instances %}
                     <option value="{{instance.name}}">{{ instance.name }}</option>
                     {% endfor %}
@@ -18,15 +15,15 @@
         </div>
 
         <div class="row">
-            <div class="col text-center">
-                <label for="question_count">How many questions</label>
-                <input type="number" name="question_count" id="question_count" min="2" value="5">
+            <div class="col-md-12 row mt-4 text-center">
+                <label class="col-md-6" for="question_count">Questions count</label>
+                <input class="col-md-6" id="question_count" type="number" name="question_count" min="2" value="5">
             </div>
         </div>
 
         <div class="row">
-            <div class="col text-center">
-                <button type="button" onclick="submitSurveyCreationForm()">Generate</button>
+            <div class="col text-center mt-4 mb-5">
+                <button type="button" class="btn_generate btn btn-secondary" onclick="submitSurveyCreationForm()">Generate</button>
             </div>
         </div>
     </form>
