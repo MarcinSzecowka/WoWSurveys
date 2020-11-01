@@ -18,7 +18,7 @@ engine = None
 if is_cloud_env:
     engine = create_engine(
         sqlalchemy.engine.url.URL(
-            drivername="postgres+pg8000",
+            drivername="postgres",
             username=databaseUser,
             password=databasePassword,
             database=databaseName,
