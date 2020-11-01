@@ -5,5 +5,5 @@ env_variables:
   DB_NAME: "wowsurveysdb"
   DB_USER: "wowsurveys"
   DB_PASSWORD: "bkIheZEndZwI8nPZz7Addrc4GAH9qbwmFa2vDlV9"
-  DB_SOCKET_DIR: "/cloudsql/"
+  DB_SOCKET_DIR: "/cloudsql"
   DB_CONNECTION_NAME: "wowsurveys:europe-west1:wowsurveysdb"
