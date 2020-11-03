@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException
+from starlette.responses import Response
 from starlette.staticfiles import StaticFiles
 
 from api import api_router
@@ -16,6 +17,9 @@ app.include_router(templates_router)
 async def http_exception_handler(request, exc):
     if exc.status_code == 404:
         return templates.TemplateResponse("404.html", {"request": request})
+    elif exc.status_code == 429:
+        return Response(status_code=429)
+    return Response(status_code=400)
 
 
 @app.exception_handler(RequestValidationError)

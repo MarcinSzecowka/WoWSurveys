@@ -59,6 +59,8 @@ class SurveyResult(Base):
     id = Column(String, primary_key=True, index=True)
     nickname = Column(String)
     score = Column(Float)
+    client_id = Column(String, index=True)
+    created_at_timestamp = Column(TIMESTAMP)
     survey = Column(String, ForeignKey('surveys.id'))
 
 
