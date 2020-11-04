@@ -94,26 +94,36 @@ body {
 }
 
 #btn_copy {
+    position: absolute;
+    right: -1px;
     border-radius: 2em;
     color: #292929;
-    width: 7em;
+    width: 8em;
     background-color: #ffb300;
 }
 
 #btn_copy:hover {
     border-radius: 2em;
     color: #dbdbdb;
-    width: 7em;
+    width: 8em;
     background-color: #404040;
 }
 
-#share_link {
+#share_link_parent {
     background-color: #404040;
     color: #dbdbdb;
     border-radius: 2em;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     text-align-last:center;
+}
+
+#share_link {
+    min-height: 2.3em;
+    background-color: rgba(0, 0, 0, 0);
+    color: #dbdbdb;
+    border: none;
+    border-radius: 2em;
 }
 
 #share_link:focus {
