@@ -2,7 +2,9 @@
 {% block body %}
 <body>
 <div class="container-fluid">
-    <div class="row"><h1 id="dungeon_name" class="col text-center mb-5">{{ survey.instance_name }}</h1></div>
+    <div class="row-fluid">
+        <h1 id="dungeon_name" class="col text-center mb-5">{{ survey.instance_name }}</h1>
+    </div>
     <form id="filled_dungeon_form">
         <ul class="list-group shadowed col-md-8 offset-md-2 mb-3">
             {% for question in survey.questions %}
@@ -21,7 +23,7 @@
                 </li>
             {% endfor %}
         </ul>
-        <div id="error_message" class="row text-danger font-weight-bold mt-4 d-none">
+        <div id="error_message" class="row text-danger font-weight-bold mt-4 mr-0 d-none">
             <div class="col text-center"><h3>You are not allowed to fill this survey again</h3></div>
 
         </div>
