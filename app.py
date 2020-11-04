@@ -25,8 +25,8 @@ async def http_exception_handler(request, exc):
 
 @app.exception_handler(RequestValidationError)
 async def unprocessable_entity_handler(request, _):
-    return templates.TemplateResponse("404.html", {"request": request})
+    return Response(status_code=422)
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)
