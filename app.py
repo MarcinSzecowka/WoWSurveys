@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException
@@ -25,3 +26,7 @@ async def http_exception_handler(request, exc):
 @app.exception_handler(RequestValidationError)
 async def unprocessable_entity_handler(request, _):
     return templates.TemplateResponse("404.html", {"request": request})
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -76,10 +76,14 @@ def is_path_a_short_id(any_path: str, db: Session):
 def is_client_eligible_to_complete_the_survey(survey_public_id: str,
                                               client_id: str,
                                               db: Session):
-    ts_minus_an_hour = datetime.datetime.utcnow() - datetime.timedelta(hours=1)
-    ineligible_clients_count = db.query(SurveyResult).\
+    ts_minus_an_hour = datetime.datetime.utcnow() - datetime.timedelta(seconds=40)
+    clients_last_response = db.query(SurveyResult).\
         join(Survey).\
         filter(and_(Survey.public_id == survey_public_id,
-                    SurveyResult.client_id == client_id,
-                    func.date(SurveyResult.created_at_timestamp) < ts_minus_an_hour)).count()
-    return ineligible_clients_count == 0
+                    SurveyResult.client_id == client_id)).\
+        order_by(SurveyResult.created_at_timestamp.desc())\
+        .first()
+    if clients_last_response is None:
+        return True
+    return clients_last_response.created_at_timestamp < ts_minus_an_hour
+
