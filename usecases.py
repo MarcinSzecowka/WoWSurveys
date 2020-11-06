@@ -17,6 +17,7 @@ def create_survey(instance_name: str, question_count: int, db: Session) -> Surve
     survey.id = str(uuid4())
     survey.public_id = str(uuid4())
     survey.instance = instance
+    survey.created_at = datetime.datetime.utcnow()
     survey.questions = generate_random_questions(db, instance_name, instance.category, question_count)
     short_id = utils.generate_random_short_id(db)
     timestamp = datetime.datetime.utcnow() + datetime.timedelta(days=7)
@@ -76,7 +77,7 @@ def is_path_a_short_id(any_path: str, db: Session):
 def is_client_eligible_to_complete_the_survey(survey_public_id: str,
                                               client_id: str,
                                               db: Session):
-    ts_minus_an_hour = datetime.datetime.utcnow() - datetime.timedelta(seconds=40)
+    ts_minus_an_hour = datetime.datetime.utcnow() - datetime.timedelta(hours=1)
     clients_last_response = db.query(SurveyResult).\
         join(Survey).\
         filter(and_(Survey.public_id == survey_public_id,
@@ -87,3 +88,27 @@ def is_client_eligible_to_complete_the_survey(survey_public_id: str,
         return True
     return clients_last_response.created_at_timestamp < ts_minus_an_hour
 
+
+def delete_surveys(surveys, timestamp, db: Session):
+    deleted_surveys_count = 0
+    for survey in surveys:
+        if survey.created_at < timestamp:
+            db.delete(survey)
+            deleted_surveys_count += 1
+    return deleted_surveys_count
+
+
+def delete_expired_surveys(db: Session):
+    deleted_surveys_count = 0
+
+    ts_minus_one_day = datetime.datetime.utcnow() - datetime.timedelta(days=1)
+    all_dungeon_surveys = db.query(Survey).join(Instance).filter(Instance.category == "DUNGEON").all()
+    deleted_surveys_count += delete_surveys(all_dungeon_surveys, ts_minus_one_day, db)
+
+    ts_minus_one_week = datetime.datetime.utcnow() - datetime.timedelta(weeks=1)
+    all_raid_surveys = db.query(Survey).join(Instance).filter(Instance.category == "RAID").all()
+    deleted_surveys_count += delete_surveys(all_raid_surveys, ts_minus_one_week, db)
+
+    db.commit()
+    db.flush()
+    return deleted_surveys_count
