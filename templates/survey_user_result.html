@@ -13,7 +13,8 @@
 <script>
      var survey_id = window.localStorage.getItem("recent_survey_id");
      $( "#dungeon_name" )[0].innerHTML = window.localStorage.getItem("recent_survey_dungeon_name");
-     var score = window.localStorage.getItem(survey_id);
+     var values = atob(window.localStorage.getItem(btoa(survey_id))).split(";");
+     var score = values[0];
      $( "#score" )[0].innerHTML = (score * 100) + "%";
 </script>
 </body>

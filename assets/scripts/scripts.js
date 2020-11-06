@@ -33,20 +33,33 @@ function submitResultsForm(event) {
     var nickname = $("#nickname").val();
     var dungeon_name = $("#dungeon_name")[0].innerText
 
-    $.ajax(
-      `/api/surveys/${surveyId}/answers?nickname=${nickname}`,
-      {
-        type: 'POST',
-        data: JSON.stringify(answers_table),
-        success: function(data, status, xhr) {
-            console.log(data);
-            window.localStorage.setItem("recent_survey_id", surveyId);
-            window.localStorage.setItem("recent_survey_dungeon_name", dungeon_name);
-            window.localStorage.setItem(surveyId, data.score);
-            window.location.href = '/result';
+    FingerprintJS.load().then(fp => {
+      fp.get().then(result => {
+        const client_id = result.visitorId;
+
+        $.ajax(
+        `/api/surveys/${surveyId}/answers?client_id=${client_id}&nickname=${nickname}`,
+        {
+            type: 'POST',
+            data: JSON.stringify(answers_table),
+            success: function(data, status, xhr) {
+                window.localStorage.setItem("recent_survey_id", surveyId);
+                window.localStorage.setItem("recent_survey_dungeon_name", dungeon_name);
+                window.localStorage.setItem(btoa(surveyId), btoa(`${data.score};${data.timestamp}`));
+                window.location.href = '/result';
+            },
+            error: function(data, status, xhr) {
+                if (data.status === 429){
+                    var error_message_element = $("#error_message")[0];
+                    error_message_element.classList.remove("d-none");
+                    var button = $("#submit")[0];
+                    button.disabled = true;
+                }
+            }
         }
-      }
-    )
+        )
+      });
+    });
 }
 
 function onInput(event) {

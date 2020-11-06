@@ -1,7 +1,8 @@
+import datetime
 from typing import List
 from uuid import UUID
 
-from fastapi import Depends, Query, APIRouter
+from fastapi import Depends, Query, APIRouter, HTTPException
 from sqlalchemy.orm import Session
 
 import usecases
@@ -38,9 +39,14 @@ async def get_survey(survey_public_id: UUID, db: Session = Depends(utils.get_db)
 @api_router.post("/api/surveys/{survey_public_id}/answers", status_code=201)
 async def complete_the_survey(survey_public_id: UUID,
                               survey_answers: List[SurveyAnswersRequest],
+                              client_id: str = Query(None, min_length=32, max_length=32),
                               nickname: str = Query(None, min_length=2, max_length=20),
                               db: Session = Depends(utils.get_db)):
-    score = usecases.complete_the_survey(survey_public_id, survey_answers, nickname, db)
+    if client_id is None:
+        raise HTTPException(status_code=400)
+    if not usecases.is_client_eligible_to_complete_the_survey(str(survey_public_id), client_id, db):
+        raise HTTPException(status_code=429)
+    score = usecases.complete_the_survey(survey_public_id, survey_answers, client_id, nickname, db)
     return {
-        "score": score
+        "score": score,
     }
