@@ -1,4 +1,6 @@
 import datetime
+import secrets
+import os
 from typing import List
 from uuid import UUID
 
@@ -9,6 +11,7 @@ import usecases
 import utils
 from database import engine, Base, SessionLocal
 from model import SurveyAnswersRequest, SurveyResponse, SurveyResultResponse
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
 questions_data_name = "questions_data.json"
 instances_data_name = "instances_data.json"
@@ -17,6 +20,7 @@ Base.metadata.create_all(bind=engine)
 
 api_router = APIRouter()
 
+security = HTTPBasic()
 
 utils.initialize_database(questions_data_name, instances_data_name, next(utils.get_db()))
 
@@ -50,3 +54,19 @@ async def complete_the_survey(survey_public_id: UUID,
     return {
         "score": score,
     }
+
+
+@api_router.delete("/api/surveys")
+async def delete_expired_surveys(credentials: HTTPBasicCredentials = Depends(security),
+                                 db: Session = Depends(utils.get_db)):
+    login = os.environ.get("WOWSURVEYS_LOGIN")
+    password = os.environ.get("WOWSURVEYS_PASSWORD")
+    correct_username = secrets.compare_digest(credentials.username, login)
+    correct_password = secrets.compare_digest(credentials.password, password)
+    if not (correct_username and correct_password):
+        raise HTTPException(
+            status_code=401,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return usecases.delete_expired_surveys(db)

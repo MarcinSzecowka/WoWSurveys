@@ -19,6 +19,7 @@ class Survey(Base):
     public_id = Column(String, primary_key=True, index=True)
     questions = relationship("Question", secondary=survey_questions_association_table)
     results = relationship("SurveyResult")
+    created_at = Column(TIMESTAMP)
     instance_name = Column(String, ForeignKey("instances.name"))
     instance = relationship("Instance")
     short_id = relationship("ShortId", uselist=False, back_populates="survey")
