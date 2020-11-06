@@ -49,7 +49,12 @@ function submitResultsForm(event) {
                 window.location.href = '/result';
             },
             error: function(data, status, xhr) {
-                window.location.href = "/error";
+                if (data.status === 429){
+                    var error_message_element = $("#error_message")[0];
+                    error_message_element.classList.remove("d-none");
+                    var button = $("#submit")[0];
+                    button.disabled = true;
+                }
             }
         }
         )
