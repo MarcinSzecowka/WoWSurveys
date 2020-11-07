@@ -19,6 +19,11 @@ function getSurveyIdFromPathname() {
 
 
 function submitResultsForm(event) {
+    var is_survey_valid = validateForm();
+    if (!is_survey_valid) {
+        return
+    }
+
     var answers_table = [];
     var filled_form = $("#filled_dungeon_form").serialize();
     for (pair of filled_form.split("&")) {
@@ -62,6 +67,40 @@ function submitResultsForm(event) {
     });
 }
 
+function validateForm() {
+    var form = $("#filled_dungeon_form");
+    var questions = form.find(".question").toArray();
+    var is_valid = true;
+    for (question of questions) {
+        var question_element = $(question);
+        if (!hasSelectedAnswer(question_element)) {
+            addInvalidClassToAnswers(question_element);
+            showWarning(question_element)
+            is_valid = false;
+        }
+    }
+    return is_valid;
+}
+
+function hasSelectedAnswer(question) {
+    return question.find(".selected").length > 0;
+}
+
+function addInvalidClassToAnswers(question_element) {
+    var answers = question_element.find(".answer").toArray();
+    for (answer of answers) {
+        answer.classList.add("is-invalid");
+    }
+}
+
+function showWarning(question) {
+    question.find(".form-warning")[0].classList.remove("d-none");
+}
+
+function removeWarning(question) {
+    question.find(".form-warning")[0].classList.add("d-none");
+}
+
 function onInput(event) {
     var button = $("#submit")[0];
     var nickname = $("#nickname").val();
@@ -101,4 +140,7 @@ function onAnswerSelected(event) {
     event.currentTarget.classList.add("selected");
     var inputToCheck = $(event.currentTarget).find("input")[0];
     inputToCheck.checked = true;
+    var question = currentAnswersGroup.parentElement;
+    currentAnswersGroup.classList.remove("is-invalid");
+    removeWarning($(question));
 }

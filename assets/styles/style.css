@@ -198,3 +198,20 @@ body {
     font-size: 150%;
     color: #ffb300;
 }
+
+.form-warning {
+    color: red;
+}
+
+ul > .is-invalid {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+}
+
+ul > .is-invalid:first-child {
+    border-top: 1px solid red;
+}
+
+ul > .is-invalid:last-child {
+    border-bottom: 1px solid red;
+}
