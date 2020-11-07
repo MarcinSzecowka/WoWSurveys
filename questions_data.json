@@ -91,5 +91,151 @@
 				"is_correct": false
 			}
 		]
+	},
+	{
+		"id": "b6c10236-fbcb-4c3e-8d6d-20d9993ce027",
+		"content": "What does Necrotic mythic+ affix do?",
+		"category": "DUNGEON",
+		"answers": [
+			{
+				"id": "1d090b9e-8f7a-4a7c-a2fc-cf4615a33ac8",
+				"content": "All enemies melee attacks and abilities apply a stacking blight that inflicts damage over time.",
+				"is_correct": false
+			},
+			{
+				"id": "b5b2ab76-412f-4247-b8f6-63f3f50657b3",
+				"content": "All enemies melee attacks and abilities apply a stacking blight that reduces healing received.",
+				"is_correct": false
+			},
+			{
+				"id": "73aa6501-5b68-41a2-93a5-a6be83a1f47b",
+				"content": "Bosses melee attacks apply a stacking blight that inflicts damage over time.",
+				"is_correct": false
+			},
+			{
+				"id": "a5934f84-00cb-4aa5-ab84-a9824d73c650",
+				"content": "All enemies melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"id": "45d32465-6ca1-467e-ae7a-bf2019adec99",
+		"content": "What does Bolstering mythic+ affix do?",
+		"category": "DUNGEON",
+		"answers": [
+			{
+				"id": "15cfae94-11c7-449a-884c-f899e90043b7",
+				"content": "When non-boss enemies die they buff nearby allies increasing their maximum health and damage by 20%.",
+				"is_correct": true
+			},
+			{
+				"id": "12bc629a-a001-4117-919c-ee867aae5aa1",
+				"content": "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+				"is_correct": false
+			},
+			{
+				"id": "62fb63cd-8627-477a-a8d5-5a37bedfedf2",
+				"content": "Bosses have 40% more health and inflict 15% more damage.",
+				"is_correct": false
+			},
+			{
+				"id": "92087161-1cc9-4840-8594-04e48160a0ec",
+				"content": "Non-boss enemies have 40% more health and inflict 15% more damage.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "977a10de-fa53-4b32-8478-576bc89a719c",
+		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does the buff do?",
+		"category": "DUNGEON",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"id": "1f10b501-5d2e-4217-b045-60fa215153cf",
+				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
+				"is_correct": false
+			},
+			{
+				"id": "76718e2c-ae75-4ddb-bb91-b17125f6b37c",
+				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
+				"is_correct": true
+			},
+			{
+				"id": "5098d619-dc79-45f9-9b29-1787c917cb6c",
+				"content": "When Spiteclaw casts his baseline ability he also burns enemies in front of him.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "455ec6d0-34f6-4e9d-8ba6-c3ce91445acc",
+		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
+		"category": "DUNGEON",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"id": "a9e7b738-c8d3-4eb8-af28-b502e6ec1b23",
+				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
+				"is_correct": false
+			},
+			{
+				"id": "afe4b0c1-7a35-4cdc-b85f-9ffd43c0005f",
+				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
+				"is_correct": true
+			},
+			{
+				"id": "8704165a-cb0e-42ae-a4e1-deaee9115bfc",
+				"content": "When Spiteclaw casts his baseline ability Rake he also burns enemies in front of him.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "db198519-cac5-4068-bb5f-acc0253a8a66",
+		"content": "What does the Haverster do and how do you counter it?",
+		"category": "DUNGEON",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"id": "c6e5184d-57b2-4ad0-93c4-3d7fa867dc23",
+				"content": "Harvester fixates on random player and tries to melee them dealing massive damage. You counter that by using crowd control abilities on the Harvester.",
+				"is_correct": false
+			},
+			{
+				"id": "5cb145b3-05b8-4296-920f-31c26f305bf0",
+				"content": "Harvester channels an ability that deals damage to entire party. You counter that by interrupting the ability.",
+				"is_correct": true
+			},
+			{
+				"id": "b8a107cb-82c5-46ed-b70a-11f153eddf51",
+				"content": "Harvester casts an ability called Harvest which deals damage to the tank. You counter that by interrupting the spellcast.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "d76ca065-1e83-471a-85e4-515b14d35d70",
+		"content": "What does Soulcleaver do and how do you counter it?",
+		"category": "DUNGEON",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"id": "df0d75b1-6e7d-4390-be3d-4931bbc544ff",
+				"content": "He channels an ability that deals high amount of damage and leaves the target stunned for 4 seconds after the damage has been dealt. You counter that by interrupting the spellcast.",
+				"is_correct": false
+			},
+			{
+				"id": "8d4c3e88-12d3-4bdb-8f0b-8fba861e4754",
+				"content": "He jumps to the random party member dealing damage. You counter that by using crow control abilities on the Soulcleaver.",
+				"is_correct": false
+			},
+			{
+				"id": "d26c6d19-afe3-43ae-9d5d-e5c0513ca232",
+				"content": "He casts a spell that damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
+				"is_correct": true
+			}
+		]
 	}
 ]
