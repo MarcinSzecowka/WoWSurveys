@@ -50,6 +50,18 @@ body {
     background-color: #ffb300;
 }
 
+.button-wide:focus {
+    outline: none;
+    box-shadow: none;
+    color: #292929;
+    background-color: #ffb300;
+}
+
+.button-wide:hover {
+    color: #dbdbdb;
+    background-color: #404040;
+}
+
 .input-wide {
     color: #dbdbdb;
     background-color: #404040;
