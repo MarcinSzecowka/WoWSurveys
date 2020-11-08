@@ -142,5 +142,13 @@ function onAnswerSelected(event) {
     inputToCheck.checked = true;
     var question = currentAnswersGroup.parentElement;
     currentAnswersGroup.classList.remove("is-invalid");
+    removeBordersFromAnswers(currentAnswersGroup);
     removeWarning($(question));
+}
+
+function removeBordersFromAnswers(answersGroup) {
+    var answers = $(answersGroup).find(".answer").toArray();
+    for(answer of answers) {
+        answer.classList.remove("is-invalid");
+    }
 }
