@@ -69,3 +69,10 @@ class Instance(Base):
     __tablename__ = "instances"
     name = Column(String, primary_key=True, index=True)
     category = Column(String)
+    bosses = relationship("Boss")
+
+
+class Boss(Base):
+    __tablename__ = "bosses"
+    name = Column(String, primary_key=True)
+    instance = Column(String, ForeignKey("instances.name"))
