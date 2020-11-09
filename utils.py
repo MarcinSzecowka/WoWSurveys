@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_
 
 from database import SessionLocal
-from entities import Question, Answer, Survey, SurveyResult, Instance, ShortId
+from entities import Question, Answer, Survey, SurveyResult, Instance, ShortId, Boss
 from model import SurveyAnswersRequest
 
 
@@ -74,6 +74,12 @@ def initialize_instances(instances_data_name, db):
         instance_entity = Instance()
         instance_entity.name = instance["name"]
         instance_entity.category = instance["category"]
+        if instance.get("bosses") is not None:
+            for boss in instance["bosses"]:
+                boss_entity = Boss()
+                boss_entity.name = boss["name"]
+                db.add(boss_entity)
+                instance_entity.bosses.append(boss_entity)
         db.add(instance_entity)
     try:
         db.commit()
