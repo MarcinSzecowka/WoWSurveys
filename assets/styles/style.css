@@ -247,3 +247,13 @@ ul > .is-invalid:last-child {
     background-color: #ffb300;
     color: #404040;
 }
+
+#fix {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#fix2 {
+    padding-left: 0;
+    padding-right: 0;
+}
