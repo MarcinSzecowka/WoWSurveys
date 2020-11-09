@@ -228,19 +228,35 @@ ul > .is-invalid:last-child {
 }
 
 .boss-label {
-    border-style: solid;
-    border-width: 1px;
+    border-style: none;
     width: 100%;
     border-radius: 2em;
-    padding-left:0em;
+    padding-left: 1em;
     background-color: #404040;
     border-color: #ffb300;
     color: #dbdbdb;
-    text-align: center;
 }
 
 .boss-checkbox {
     display:none;
+}
+
+/* Label is unchecked */
+.boss-checkbox + label > #checked-icon{
+    display: none;
+}
+
+.boss-checkbox + label > #unchecked-icon{
+    display: inline;
+}
+
+/* Label is checked */
+.boss-checkbox:checked + label > #unchecked-icon {
+    display: none;
+}
+
+.boss-checkbox:checked + label > #checked-icon {
+    display: inline;
 }
 
 .boss-checkbox:checked + label {
