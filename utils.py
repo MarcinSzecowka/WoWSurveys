@@ -78,7 +78,6 @@ def initialize_instances(instances_data_name, db):
             for boss in instance["bosses"]:
                 boss_entity = Boss()
                 boss_entity.name = boss["name"]
-                db.add(boss_entity)
                 instance_entity.bosses.append(boss_entity)
         db.add(instance_entity)
     try:

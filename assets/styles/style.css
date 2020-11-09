@@ -34,8 +34,6 @@ body {
 
 #dungeon_form {
     background-color: #404040;
-    margin-left: 40em;
-    margin-right: 40em;
     border-radius: 0.5em;
 }
 
@@ -195,6 +193,7 @@ body {
 
 .form-check {
     width: 100%;
+    padding-left: 0em;
 }
 
 #nickname {
@@ -226,4 +225,25 @@ ul > .is-invalid:first-child {
 
 ul > .is-invalid:last-child {
     border-bottom: 1px solid red;
+}
+
+.boss-label {
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    border-radius: 2em;
+    padding-left:0em;
+    background-color: #404040;
+    border-color: #ffb300;
+    color: #dbdbdb;
+    text-align: center;
+}
+
+.boss-checkbox {
+    display:none;
+}
+
+.boss-checkbox:checked + label {
+    background-color: #ffb300;
+    color: #404040;
 }
