@@ -152,3 +152,9 @@ function removeBordersFromAnswers(answersGroup) {
         answer.classList.remove("is-invalid");
     }
 }
+
+function displayInstanceBosses(event) {
+    var instanceName = event.target.value.replaceAll(" ","_");
+    var instanceToShow = $(`#${instanceName}`);
+    instanceToShow[0].classList.remove("d-none");
+}
