@@ -1,7 +1,7 @@
 import datetime
 import secrets
 import os
-from typing import List
+from typing import List, Optional
 from uuid import UUID
 
 from fastapi import Depends, Query, APIRouter, HTTPException
@@ -26,8 +26,10 @@ utils.initialize_database(questions_data_name, instances_data_name, next(utils.g
 
 
 @api_router.post("/api/surveys", status_code=201, response_model=SurveyResponse)
-async def create_survey(instance_name: str, question_count: int = 2, db: Session = Depends(utils.get_db)):
-    return usecases.create_survey(instance_name, question_count, db)
+async def create_survey(instance_name: str, question_count: int = 2,
+                        bosses: Optional[List[str]] = Query(None),
+                        db: Session = Depends(utils.get_db)):
+    return usecases.create_survey(instance_name, question_count, bosses, db)
 
 
 @api_router.get("/api/surveys/{survey_id}/results", response_model=List[SurveyResultResponse])

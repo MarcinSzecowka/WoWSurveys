@@ -11,14 +11,14 @@ from model import SurveyAnswersRequest
 from utils import generate_random_questions
 
 
-def create_survey(instance_name: str, question_count: int, db: Session) -> Survey:
+def create_survey(instance_name: str, question_count: int, bosses: List[str], db: Session) -> Survey:
     instance = db.query(Instance).filter(Instance.name == instance_name).first()
     survey = Survey()
     survey.id = str(uuid4())
     survey.public_id = str(uuid4())
     survey.instance = instance
     survey.created_at = datetime.datetime.utcnow()
-    survey.questions = generate_random_questions(db, instance_name, instance.category, question_count)
+    survey.questions = generate_random_questions(db, instance_name, instance.category, question_count, bosses)
     short_id = utils.generate_random_short_id(db)
     timestamp = datetime.datetime.utcnow() + datetime.timedelta(days=7)
     short_id_entity = ShortId()
