@@ -169,3 +169,8 @@ function displayInstanceBosses(event) {
         instanceToShow[0].classList.remove("d-none")
         };
 }
+
+function displayCurrentlySelectedInstance() {
+    var selected = $("#instance_name").val()
+    console.log(selected)
+}

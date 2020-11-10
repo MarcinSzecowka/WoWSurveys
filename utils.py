@@ -25,9 +25,12 @@ def generate_random_questions(db: Session, instance_name: str, category: str, qu
         .filter(or_(Question.instance_name == instance_name, Question.category == category))\
         .all()
     all_questions_with_restrictions = all_questions
-    if question_count > len(all_questions):
-        return all_questions
-    return random.sample(all_questions, question_count)
+    if bosses is not None:
+        all_questions_with_restrictions = list(filter(
+            lambda question: question.boss_name is None or question.boss_name in bosses, all_questions))
+    if question_count > len(all_questions_with_restrictions):
+        return all_questions_with_restrictions
+    return random.sample(all_questions_with_restrictions, question_count)
 
 
 def get_survey(db: Session, survey_id: str) -> SurveyResult:
@@ -98,7 +101,8 @@ def initialize_questions(questions_data_name, db):
             question_entity.id = question["id"]
             question_entity.content = question["content"]
             question_entity.instance_name = question.get("instance_name")
-            question_entity.category = question["category"]
+            question_entity.category = question.get("category")
+            question_entity.boss_name = question.get("boss_name")
             question_entity.answers = convert_answers_to_entities(question["answers"])
             db.add(question_entity)
             question_count += 1
