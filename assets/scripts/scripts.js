@@ -1,7 +1,12 @@
 function submitSurveyCreationForm() {
     var form = $("#dungeon_form");
+    var checkedBosses = $("#dungeon_form").find(".instance").not(".d-none").find(".boss-checkbox:checked + label");
+    var bossesQuery = "";
+    for (boss of checkedBosses) {
+        bossesQuery = bossesQuery.concat(`&bosses=${encodeURIComponent(boss.innerText.trim())}`)
+    }
     $.ajax(
-      `/api/surveys?${form.serialize()}`,
+      `/api/surveys?${form.serialize()}${bossesQuery}`,
       {
         type: 'POST',
         success: function(data, status, xhr) {
@@ -154,7 +159,13 @@ function removeBordersFromAnswers(answersGroup) {
 }
 
 function displayInstanceBosses(event) {
+    var allInstances = $(".instance");
+    for (instance of allInstances) {
+        $(instance).addClass("d-none")
+    }
     var instanceName = event.target.value.replaceAll(" ","_");
     var instanceToShow = $(`#${instanceName}`);
-    instanceToShow[0].classList.remove("d-none");
+    if (typeof instanceToShow[0] != "undefined") {
+        instanceToShow[0].classList.remove("d-none")
+        };
 }

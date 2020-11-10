@@ -14,6 +14,7 @@
             </div>
         </div>
         {% for instance in instances %}
+        {% if instance.bosses|length > 0 %}
         <div class="row d-none instance" id='{{instance.name|replace(" ", "_")}}'>
             <div class="col-md-12 row mt-4 text-center">
                 <label id="fix" class="col text-center">Bosses</label>
@@ -35,6 +36,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
         <div class="row">
             <div class="col-md-12 row mt-4 text-center">

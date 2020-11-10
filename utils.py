@@ -20,10 +20,11 @@ def get_db():
         db.close()
 
 
-def generate_random_questions(db: Session, instance_name: str, category: str, question_count: int):
+def generate_random_questions(db: Session, instance_name: str, category: str, question_count: int, bosses: List[str]):
     all_questions = db.query(Question)\
         .filter(or_(Question.instance_name == instance_name, Question.category == category))\
         .all()
+    all_questions_with_restrictions = all_questions
     if question_count > len(all_questions):
         return all_questions
     return random.sample(all_questions, question_count)
