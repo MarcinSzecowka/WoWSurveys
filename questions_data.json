@@ -147,32 +147,8 @@
 		]
 	},
 	{
-		"id": "977a10de-fa53-4b32-8478-576bc89a719c",
-		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does the buff do?",
-		"category": "DUNGEON",
-		"instance_name": "Mists of Tirna Scithe",
-		"answers": [
-			{
-				"id": "1f10b501-5d2e-4217-b045-60fa215153cf",
-				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
-				"is_correct": false
-			},
-			{
-				"id": "76718e2c-ae75-4ddb-bb91-b17125f6b37c",
-				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
-				"is_correct": true
-			},
-			{
-				"id": "5098d619-dc79-45f9-9b29-1787c917cb6c",
-				"content": "When Spiteclaw casts his baseline ability he also burns enemies in front of him.",
-				"is_correct": false
-			}
-		]
-	},
-	{
 		"id": "455ec6d0-34f6-4e9d-8ba6-c3ce91445acc",
 		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
-		"category": "DUNGEON",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
@@ -195,7 +171,6 @@
 	{
 		"id": "db198519-cac5-4068-bb5f-acc0253a8a66",
 		"content": "What does the Haverster do and how do you counter it?",
-		"category": "DUNGEON",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
@@ -218,7 +193,6 @@
 	{
 		"id": "d76ca065-1e83-471a-85e4-515b14d35d70",
 		"content": "What does Soulcleaver do and how do you counter it?",
-		"category": "DUNGEON",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
@@ -235,6 +209,54 @@
 				"id": "d26c6d19-afe3-43ae-9d5d-e5c0513ca232",
 				"content": "He casts a spell that damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
 				"is_correct": true
+			}
+		]
+	},
+	{
+		"id": "345e8bca-dce5-4e93-99cc-821d497c5476",
+		"content": "What does Bloodcurdling Shriek do?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"answers": [
+			{
+				"id": "83c8129a-e642-49b0-9995-d5a3d2656fac",
+				"content": "Inflicts lethal amount of damage to anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
+				"is_correct": true
+			},
+			{
+				"id": "991c66dc-df47-4d0b-a42f-d51a74aa6970",
+				"content": "Fears anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
+				"is_correct": false
+			},
+			{
+				"id": "59b74f8b-e236-4b95-bbff-063a9093fce5",
+				"content": "All players in line of sight of the boss leave Sanguine Ichor below them. Sanguine Ichor deals a moderate amount of damage over time.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"id": "705afcf8-2327-4a3e-9b60-fb613957f0b4",
+		"content": "",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Huntsman Altimor",
+		"answers": [
+			{
+				"id": "816214f4-3055-49b4-9bdf-4816493ce900",
+				"content": "",
+				"is_correct": true
+			},
+			{
+				"id": "c7c7706b-63e4-485c-9f93-91cbac326a6d",
+				"content": "",
+				"is_correct": false
+			},
+			{
+				"id": "6f4db61c-ec96-497a-a009-85e0de899420",
+				"content": "",
+				"is_correct": false
 			}
 		]
 	}

@@ -39,6 +39,7 @@ class Question(Base):
     content = Column(String)
     instance_name = Column(String, index=True)
     category = Column(String)
+    boss_name = Column(String)
     answers = relationship("Answer", secondary=question_answers_association_table)
 
     def get_correct_answer(self):

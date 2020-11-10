@@ -228,12 +228,9 @@ ul > .is-invalid:last-child {
 }
 
 .boss-label {
-    border-style: none;
     width: 100%;
-    border-radius: 2em;
     padding-left: 1em;
     background-color: #404040;
-    border-color: #ffb300;
     color: #dbdbdb;
 }
 
@@ -257,11 +254,11 @@ ul > .is-invalid:last-child {
 
 .boss-checkbox:checked + label > #checked-icon {
     display: inline;
+    color: #ffb300;
 }
 
 .boss-checkbox:checked + label {
-    background-color: #ffb300;
-    color: #404040;
+    color: #dbdbdb;
 }
 
 #fix {
