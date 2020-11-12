@@ -48,7 +48,13 @@
     <ul class="list-group shadowed col-md-8 offset-md-2 mb-5 mr-0">
         {% for question in survey.questions %}
         <li class="list-group-item row styled-list-item">
-            <div class="secondary-text">Question {{loop.index}}</div> {{ question.content }}
+            <div class="secondary-text">Question {{loop.index}}</div>
+            {{ question.content }}
+            {% if question.image is not none %}
+            <div class="row col ml-1">
+                <img src="/assets/images/{{question.image}}" class="mt-4 mb-2 question_image shadowed">
+            </div>
+            {% endif %}
             <ul class="list-group mt-4 mb-4">
                 {% for answer in question.answers %}
                 <li class="row list-group-item styled-list-item answer {% if answer.is_correct %}correct{% endif %}"><span class="secondary-text">{{ loop.index }}.</span>

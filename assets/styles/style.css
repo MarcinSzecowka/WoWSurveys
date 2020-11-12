@@ -270,3 +270,7 @@ ul > .is-invalid:last-child {
     padding-left: 0;
     padding-right: 0;
 }
+
+.question_image {
+    border-radius: 10px;
+}
