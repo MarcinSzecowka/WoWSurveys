@@ -8,20 +8,30 @@
     <form id="filled_dungeon_form" autocomplete="off">
         <ul class="list-group shadowed col-md-8 offset-md-2 mb-3">
             {% for question in survey.questions %}
-                <li class="list-group-item styled-list-item row question"><div class="secondary-text">Question {{loop.index}}</div> {{ question.content }}
-                    <ul class="list-group mt-4 mb-4">
-                        {% for answer in question.answers %}
-                        <li class="row answer clickable styled-list-item list-group-item" onmousedown="onAnswerSelected(event)">
-                            <input class="form-check-input clickable" type="radio" name="{{ question.id }}" id="{{ answer.id }}"
-                                   value="{{ answer.id }}" required>
-                            <label class="form-check-label clickable" for="{{ answer.id }}">
-                                <span class="secondary-text">{{ loop.index }}.</span><span class="ml-3">{{ answer.content }}</span>
-                            </label>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <div class="form-warning text-center d-none">Please select your answer</div>
-                </li>
+            <li class="list-group-item styled-list-item row question">
+                <div class="secondary-text">Question {{loop.index}}</div>
+                {{ question.content }}
+                {% if question.image is not none %}
+                <div class="row col ml-1">
+                    <img src="/assets/images/{{question.image}}" class="mt-4 mb-2 question_image shadowed">
+                </div>
+                {% endif %}
+                <ul class="list-group mt-4 mb-4">
+                    {% for answer in question.answers %}
+                    <li class="row answer clickable styled-list-item list-group-item"
+                        onmousedown="onAnswerSelected(event)">
+                        <input class="form-check-input clickable" type="radio" name="{{ question.id }}"
+                               id="{{ answer.id }}"
+                               value="{{ answer.id }}" required>
+                        <label class="form-check-label clickable" for="{{ answer.id }}">
+                            <span class="secondary-text">{{ loop.index }}.</span><span
+                                class="ml-3">{{ answer.content }}</span>
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="form-warning text-center d-none">Please select your answer</div>
+            </li>
             {% endfor %}
         </ul>
         <div id="error_message" class="row text-danger font-weight-bold mt-4 mr-0 d-none">
@@ -30,10 +40,13 @@
         </div>
         <div class="row mt-5" id="submit-btn-row">
             <div class="col-md-3 offset-md-3">
-                <input id="nickname" type="text" class="input-wide float-md-right h-100 text-center" placeholder="Nickname" minlength="3" oninput="onInput(event)" required>
+                <input id="nickname" type="text" class="input-wide float-md-right h-100 text-center"
+                       placeholder="Nickname" minlength="3" oninput="onInput(event)" required>
             </div>
             <div class="col-md-3">
-                <button id="submit" type="button" class="button-wide btn btn-secondary" onclick="submitResultsForm(event)" disabled>Submit</button>
+                <button id="submit" type="button" class="button-wide btn btn-secondary"
+                        onclick="submitResultsForm(event)" disabled>Submit
+                </button>
             </div>
         </div>
     </form>
@@ -45,6 +58,8 @@
         $(radButton).prop("checked", true);
     }
 });
+
+
 </script>
 </body>
 {% endblock %}

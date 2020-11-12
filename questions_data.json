@@ -1,260 +1,235 @@
 [
 	{
-		"id": "4a49ca87-df20-4eaf-a624-74b0b8da4f50",
 		"content": "What does Inspiring affix do in mythic+?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "cd5b0bca-aa13-4a46-bd92-164ba4610e68",
 				"content": "Units with Inspired status effect buff nearby units increasing their health by 30% and damage done by 20%.",
 				"is_correct": false
 			},
 			{
-				"id": "26f40145-891c-4395-a8d4-d451bb8a7b99",
 				"content": "Units with Inspired status effect buff themselves which grants them immunity to crowd control effects.",
 				"is_correct": false
 			},
 			{
-				"id": "6a1faf7c-37e8-4cde-8515-cf6fb120cadd",
 				"content": "Units with Inspired status effect buff nearby units making them immune to crowd control effects.",
 				"is_correct": true
 			}
 		]
 	},
 	{
-		"id": "428566bc-0956-4646-932a-50e6208e28d1",
 		"content": "Who does Inspired mythic+ affix buff apply to?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "aa621f28-0d26-4e9e-bb81-4aaa53b6b82c",
 				"content": "It applies only to the owner of the buff.",
 				"is_correct": false
 			},
 			{
-				"id": "849edea0-d551-4539-8fad-9a5da6e244d2",
 				"content": "It applies only to the units nearby the owner of the buff.",
 				"is_correct": true
 			},
 			{
-				"id": "ac9c8a34-7eb2-474b-b887-03be77e1278c",
 				"content": "It applies to both owner of the buff and all nearby units.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "389783bd-317e-4807-925e-b83146a97c34",
 		"content": "Who does Spiteful affix do in mythic+?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "bc4e8411-c80e-4490-a7ac-a97bc3b27d54",
 				"content": "Killing non-boss enemies spawns shades that fixate on a random player.",
 				"is_correct": true
 			},
 			{
-				"id": "c402c624-68ae-4fdd-aee7-7770a2b30200",
 				"content": "Attacking an enemy marked with Spiteful buff increases the damage dealt by this enemy to all party members.",
 				"is_correct": false
 			},
 			{
-				"id": "ac2e6e70-64a9-4e8f-a0e0-3b457ddb0f59",
 				"content": "Additional enemies are present throughout the dungeon.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "486da191-7cbe-43ef-9a23-f87fd2447d9b",
 		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "ed50d0c5-22f1-44bc-a085-639dac445452",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
 				"is_correct": false
 			},
 			{
-				"id": "84fed5fe-0749-447e-84f3-e13985868dcd",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and reduces damage taken by 15%. The buff lasts for 60 seconds.",
 				"is_correct": false
 			},
 			{
-				"id": "c278c324-ab50-4f22-bb26-806d456a9817",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
 				"is_correct": true
 			},
 			{
-				"id": "0c4e594a-8289-4205-be88-5e39baa4fa8d",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60%. Additionally dealing damage when on full health grants a shield equal to 5% of the damage done. The shield starts to decay rapidly after 5 seconds. The Prideful buff lasts for 60 seconds.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "b6c10236-fbcb-4c3e-8d6d-20d9993ce027",
 		"content": "What does Necrotic mythic+ affix do?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "1d090b9e-8f7a-4a7c-a2fc-cf4615a33ac8",
 				"content": "All enemies melee attacks and abilities apply a stacking blight that inflicts damage over time.",
 				"is_correct": false
 			},
 			{
-				"id": "b5b2ab76-412f-4247-b8f6-63f3f50657b3",
 				"content": "All enemies melee attacks and abilities apply a stacking blight that reduces healing received.",
 				"is_correct": false
 			},
 			{
-				"id": "73aa6501-5b68-41a2-93a5-a6be83a1f47b",
 				"content": "Bosses melee attacks apply a stacking blight that inflicts damage over time.",
 				"is_correct": false
 			},
 			{
-				"id": "a5934f84-00cb-4aa5-ab84-a9824d73c650",
 				"content": "All enemies melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
 				"is_correct": true
 			}
 		]
 	},
 	{
-		"id": "45d32465-6ca1-467e-ae7a-bf2019adec99",
 		"content": "What does Bolstering mythic+ affix do?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "15cfae94-11c7-449a-884c-f899e90043b7",
 				"content": "When non-boss enemies die they buff nearby allies increasing their maximum health and damage by 20%.",
 				"is_correct": true
 			},
 			{
-				"id": "12bc629a-a001-4117-919c-ee867aae5aa1",
 				"content": "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
 				"is_correct": false
 			},
 			{
-				"id": "62fb63cd-8627-477a-a8d5-5a37bedfedf2",
 				"content": "Bosses have 40% more health and inflict 15% more damage.",
 				"is_correct": false
 			},
 			{
-				"id": "92087161-1cc9-4840-8594-04e48160a0ec",
 				"content": "Non-boss enemies have 40% more health and inflict 15% more damage.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "455ec6d0-34f6-4e9d-8ba6-c3ce91445acc",
 		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
-				"id": "a9e7b738-c8d3-4eb8-af28-b502e6ec1b23",
 				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
 				"is_correct": false
 			},
 			{
-				"id": "afe4b0c1-7a35-4cdc-b85f-9ffd43c0005f",
 				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
 				"is_correct": true
 			},
 			{
-				"id": "8704165a-cb0e-42ae-a4e1-deaee9115bfc",
 				"content": "When Spiteclaw casts his baseline ability Rake he also burns enemies in front of him.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "db198519-cac5-4068-bb5f-acc0253a8a66",
 		"content": "What does the Haverster do and how do you counter it?",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
-				"id": "c6e5184d-57b2-4ad0-93c4-3d7fa867dc23",
 				"content": "Harvester fixates on random player and tries to melee them dealing massive damage. You counter that by using crowd control abilities on the Harvester.",
 				"is_correct": false
 			},
 			{
-				"id": "5cb145b3-05b8-4296-920f-31c26f305bf0",
 				"content": "Harvester channels an ability that deals damage to entire party. You counter that by interrupting the ability.",
 				"is_correct": true
 			},
 			{
-				"id": "b8a107cb-82c5-46ed-b70a-11f153eddf51",
 				"content": "Harvester casts an ability called Harvest which deals damage to the tank. You counter that by interrupting the spellcast.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "d76ca065-1e83-471a-85e4-515b14d35d70",
 		"content": "What does Soulcleaver do and how do you counter it?",
 		"instance_name": "Mists of Tirna Scithe",
 		"answers": [
 			{
-				"id": "df0d75b1-6e7d-4390-be3d-4931bbc544ff",
 				"content": "He channels an ability that deals high amount of damage and leaves the target stunned for 4 seconds after the damage has been dealt. You counter that by interrupting the spellcast.",
 				"is_correct": false
 			},
 			{
-				"id": "8d4c3e88-12d3-4bdb-8f0b-8fba861e4754",
 				"content": "He jumps to the random party member dealing damage. You counter that by using crow control abilities on the Soulcleaver.",
 				"is_correct": false
 			},
 			{
-				"id": "d26c6d19-afe3-43ae-9d5d-e5c0513ca232",
 				"content": "He casts a spell that damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
 				"is_correct": true
 			}
 		]
 	},
 	{
-		"id": "345e8bca-dce5-4e93-99cc-821d497c5476",
 		"content": "What does Bloodcurdling Shriek do?",
 		"category": "RAID",
 		"instance_name": "Castle Nathria",
 		"boss_name": "Shriekwing",
+		"image": "Shriekwing-EarsplittingShriek.png",
 		"answers": [
 			{
-				"id": "83c8129a-e642-49b0-9995-d5a3d2656fac",
 				"content": "Inflicts lethal amount of damage to anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
 				"is_correct": true
 			},
 			{
-				"id": "991c66dc-df47-4d0b-a42f-d51a74aa6970",
 				"content": "Fears anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
 				"is_correct": false
 			},
 			{
-				"id": "59b74f8b-e236-4b95-bbff-063a9093fce5",
 				"content": "All players in line of sight of the boss leave Sanguine Ichor below them. Sanguine Ichor deals a moderate amount of damage over time.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "705afcf8-2327-4a3e-9b60-fb613957f0b4",
+		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "Shriekwing-EarsplittingShriek.png",
+		"answers": [
+			{
+				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
+				"is_correct": false
+			},
+			{
+				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
+				"is_correct": true
+			},
+			{
+				"content": "When Spiteclaw casts his baseline ability Rake he also burns enemies in front of him.",
+				"is_correct": false
+			}
+		]
+	},
+	{
 		"content": "",
 		"category": "RAID",
 		"instance_name": "Castle Nathria",
 		"boss_name": "Huntsman Altimor",
 		"answers": [
 			{
-				"id": "816214f4-3055-49b4-9bdf-4816493ce900",
 				"content": "",
 				"is_correct": true
 			},
 			{
-				"id": "c7c7706b-63e4-485c-9f93-91cbac326a6d",
 				"content": "",
 				"is_correct": false
 			},
 			{
-				"id": "6f4db61c-ec96-497a-a009-85e0de899420",
 				"content": "",
 				"is_correct": false
 			}

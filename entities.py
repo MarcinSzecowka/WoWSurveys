@@ -40,6 +40,7 @@ class Question(Base):
     instance_name = Column(String, index=True)
     category = Column(String)
     boss_name = Column(String)
+    image = Column(String)
     answers = relationship("Answer", secondary=question_answers_association_table)
 
     def get_correct_answer(self):
@@ -48,12 +49,19 @@ class Question(Base):
                 return answer
         return None
 
+    def get_entity_fingerprint(self):
+        hashes = tuple([ans.get_entity_fingerprint() for ans in self.answers])
+        return hash((self.content, self.instance_name, self.category, self.boss_name, self.image, hashes))
+
 
 class Answer(Base):
     __tablename__ = "answers"
     id = Column(String, primary_key=True, index=True)
     content = Column(String)
     is_correct = Column(Boolean)
+
+    def get_entity_fingerprint(self):
+        return hash((self.content, self.is_correct))
 
 
 class SurveyResult(Base):
