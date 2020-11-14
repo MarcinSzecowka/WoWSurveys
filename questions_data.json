@@ -339,6 +339,109 @@
 		]
 	},
 	{
+		"content": "What should you do with the clones that Miscaller creates during the fight?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "You should only dodge the dodgeballs they create but ignore anything else.",
+				"is_correct": false
+			},
+			{
+				"content": "You should kill the clone that has a symbol with unique property.",
+				"is_correct": true
+			},
+			{
+				"content": "You should kill all clones except for the one with the symbol with unique property.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Who should interrupt the spell called Patty Cake casted by the Mistcaller?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "The tank should interrupt it.",
+				"is_correct": true
+			},
+			{
+				"content": "Any of the players can interrupt it.",
+				"is_correct": false
+			},
+			{
+				"content": "Only dps can interrupt it, tanks and healers must not.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The Mistaller summons a fox during a fight. What does the fox do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "The fox travels in the direction of the Mistcaller. If he reaches her the Mistaller releases a nova that deals damage to all players in the boss room.",
+				"is_correct": false
+			},
+			{
+				"content": "The fox fixates a random player. If anyone goes near the fox it explodes dealing massive damage to all players nearby.",
+				"is_correct": true
+			},
+			{
+				"content": "The fox leaps around the room dealing damage to all players until killed.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Acidgullet casts a spell called Volatile Acid. What does the spell do and how do you deal with it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-slugs.jpg",
+		"answers": [
+			{
+				"content": "The spell deals damage in front of the caster and knocks back all units hit by the spell. It is interruptable so you should interrupt it.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage in front of the caster and knocks back all units hit by the spell. It can't be interrupted so you have to stun the Acidgullets during cast.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage over time to the target. It can't be interrupted so you have to stun the Acidgullets during cast.",
+				"is_correct": true
+			},
+			{
+				"content": "The spell deals damage over time to the target. It is interruptable so you should interrupt it.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Tred'ova casts a spell called Mind Link. What does it do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-tredova.jpg",
+		"answers": [
+			{
+				"content": "It links selected player with other players by a mind link. Mind link deals damage until the linked player moves far enough so that the link is broken.",
+				"is_correct": true
+			},
+			{
+				"content": "It links selected player with one other random player by a mind link. Mind link silences both players until they move far enough so that the link is broken.",
+				"is_correct": false
+			},
+			{
+				"content": "It links all players with a mind link. Mind link deals damage until all players move far enough from each other so that the link is broken.",
+				"is_correct": false
+			},
+			{
+				"content": "It links all players with a mind link. Mind link silences all targets players until all players move far enough from each other so that the link is broken.",
+				"is_correct": false
+			}
+		]
+	},
+	{
 		"content": "The first boss of the Castle Nathria, Shriekwing, casts an ability called Bloodcurdling Shriek. What does it do?",
 		"category": "RAID",
 		"instance_name": "Castle Nathria",
