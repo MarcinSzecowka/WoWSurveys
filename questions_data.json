@@ -120,8 +120,9 @@
 		]
 	},
 	{
-		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
+		"content": "One of the enemies in this dungeon, Spiteclaw, has a buff called Dying Breath - what does it do?",
 		"instance_name": "Mists of Tirna Scithe",
+		"image": "Spiteclaw.png",
 		"answers": [
 			{
 				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
@@ -174,7 +175,171 @@
 		]
 	},
 	{
-		"content": "What does Bloodcurdling Shriek do?",
+		"content": "The Villager channels a spell called Overgrowth. What does the spell do and how do you counter it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Villager.jpg",
+		"answers": [
+			{
+				"content": "The spell deals high amount of damage and leaves the target stunned for 4 seconds after the damage has been dealt. You counter that by interrupting the spellcast.",
+				"is_correct": true
+			},
+			{
+				"content": "At the end of the channel the Villager jumps to a random player and stuns them. You counter that by using crow control abilities on the Villager.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "The Villager casts a spell called Bewildering Pollen. The cast cannot be interrupted. What does the spell do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Villager.jpg",
+		"answers": [
+			{
+				"content": "The spell deals damage to all the players in 10 yard radius around the Villager and knocks back all players hit by the spell.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage to all players in front of the Villager and disorients all players hit by the spell.",
+				"is_correct": true
+			},
+			{
+				"content": "The spell deals damage to all the players in front of the Villager and knocks back all players hit by the spell.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage to all the players in 10 yard radius around the Villager.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does the Boughbreaker do once he falls below 50% health?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Boughbreaker.png",
+		"answers": [
+			{
+				"content": "He channels an uninterruptable spell that deals massive AoE damage to all enemies nearby.",
+				"is_correct": true
+			},
+			{
+				"content": "He casts an interruptable spell for 5 seconds. If the spell is cast sucessfully the Boughbreaker regenerates all his missing health in a period of 10 seconds.",
+				"is_correct": false
+			},
+			{
+				"content": "After a short delay he summons one additional unit that will fixate on a random player.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The Boughbreaker has two main abilities. One of them is cast once he falls below 50% health. What does the other ability do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Boughbreaker.png",
+		"answers": [
+			{
+				"content": "Boughbreaker channels a spell for 10 seconds. At the end of a channel Boughbreaker gains massive shield. The spell is interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "Boughbreaker casts a spell that deals damage to all units in front of him knocking them back.",
+				"is_correct": false
+			},
+			{
+				"content": "Boughbreaker spawns black patches below the players. After a short delay the patches deal damage to players standing within them.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Who should you focus first in the first boss encounter in this dungeon and why?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-1st-boss.jpg",
+		"answers": [
+			{
+				"content": "You should focus Oulfarran (the blue guy) because Maloch deals damage based on how much damage he himself has taken recently.",
+				"is_correct": false
+			},
+			{
+				"content": "You should focus Oulfarran (the blue guy) because Maloch takes 80% reduced damage at the start of the fight.",
+				"is_correct": true
+			},
+			{
+				"content": "You should focus Maloch. Oulfarran (the blue guy) is a friendly unit that helps you throughout the fight.",
+				"is_correct": false
+			},
+			{
+				"content": "You should focus Maloch. Oulfarran (the blue guy) takes 80% reduced damage at the start of the fight.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What happens when Oulfarran (the blue guy) is taken down to 20% health?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-1st-boss.jpg",
+		"answers": [
+			{
+				"content": "He stuns Maloch and makes it so that Maloch takes 300% more damage.",
+				"is_correct": true
+			},
+			{
+				"content": "He stuns Maloch and drains his life for the duration of the stun.",
+				"is_correct": false
+			},
+			{
+				"content": "He explodes dealing damage to all units (including Maloch) in 20 yards range.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "There are 3 pathways to take, each one of them is marked with one of the symbols. Which path do you take?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-maze.png",
+		"answers": [
+			{
+				"content": "First",
+				"is_correct": false
+			},
+			{
+				"content": "Second",
+				"is_correct": false
+			},
+			{
+				"content": "Third",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "There are 4 pathways to take, each one of them is marked with one of the symbols. Which path do you take?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-maze-2.jpg",
+		"answers": [
+			{
+				"content": "First",
+				"is_correct": false
+			},
+			{
+				"content": "Second",
+				"is_correct": true
+			},
+			{
+				"content": "Third",
+				"is_correct": false
+			},
+			{
+				"content": "Fourth",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The first boss of the Castle Nathria, Shriekwing, casts an ability called Bloodcurdling Shriek. What does it do?",
 		"category": "RAID",
 		"instance_name": "Castle Nathria",
 		"boss_name": "Shriekwing",
@@ -190,47 +355,6 @@
 			},
 			{
 				"content": "All players in line of sight of the boss leave Sanguine Ichor below them. Sanguine Ichor deals a moderate amount of damage over time.",
-				"is_correct": false
-			}
-		]
-	},
-	{
-		"content": "One of the first enemies you'll encounter in this dungeon is Spiteclaw. Spiteclaw has a buff called Dying Breath - what does it do?",
-		"category": "RAID",
-		"instance_name": "Castle Nathria",
-		"boss_name": "Shriekwing",
-		"image": "Shriekwing-EarsplittingShriek.png",
-		"answers": [
-			{
-				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
-				"is_correct": false
-			},
-			{
-				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
-				"is_correct": true
-			},
-			{
-				"content": "When Spiteclaw casts his baseline ability Rake he also burns enemies in front of him.",
-				"is_correct": false
-			}
-		]
-	},
-	{
-		"content": "",
-		"category": "RAID",
-		"instance_name": "Castle Nathria",
-		"boss_name": "Huntsman Altimor",
-		"answers": [
-			{
-				"content": "",
-				"is_correct": true
-			},
-			{
-				"content": "",
-				"is_correct": false
-			},
-			{
-				"content": "",
 				"is_correct": false
 			}
 		]
