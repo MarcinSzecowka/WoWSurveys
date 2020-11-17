@@ -461,5 +461,139 @@
 				"is_correct": false
 			}
 		]
+	},
+	{
+		"content": "When does Shriekwing transition into phase two?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing.png",
+		"answers": [
+			{
+				"content": "Once it falls below 50% health.",
+				"is_correct": false
+			},
+			{
+				"content": "After reaching 100 energy.",
+				"is_correct": true
+			},
+			{
+				"content": "After casting Bloodcurdling Shriek two times.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What should you do when marked with Echolocation while fighting Shriekwing?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "echolocation.jpg",
+		"answers": [
+			{
+				"content": "You should move into the raid since the damage is split into all targets around you.",
+				"is_correct": false
+			},
+			{
+				"content": "You should move out of the raid since the spell deals damage in all units around you.",
+				"is_correct": true
+			},
+			{
+				"content": "You should stand behind a pilar so you're not in line of sight of anyone. The spell deals damage to all players in line of sight.",
+				"is_correct": false
+			},
+			{
+				"content": "You should stand behind a pilar so you're not in line of sight of the boss. The spell deals increased damage if in line of sight with the Shriekwing.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What should you do right after Shriekwing transitions into second phase?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-2nd-phase.jpg",
+		"answers": [
+			{
+				"content": "You should avoid walking up to the boss and you should focus on dodging the orbs that will be spawned during this phase.",
+				"is_correct": true
+			},
+			{
+				"content": "You should focus on dealing as much damage as possible since the boss takes increased damage for the duration of the transition phase.",
+				"is_correct": false
+			},
+			{
+				"content": "You should walk into the sonar orbs to destroy them since those will not disappear when the transition phase ends.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "During transition phase Shriekwing casts a spell called Sonar Shriek? What does it do?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing.png",
+		"answers": [
+			{
+				"content": "It deals massive damage to all players within 20 yards of the boss.",
+				"is_correct": false
+			},
+			{
+				"content": "It spawns multiple sonar orbs around the boss.",
+				"is_correct": false
+			},
+			{
+				"content": "It deals massive damage to all players in line of sight of the boss.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Which spells and abilities in the Shriekwing encounter can destroy The Blood Lantern?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-lantern.png",
+		"answers": [
+			{
+				"content": "None of the abilities can destroy The Blood Lantern.",
+				"is_correct": false
+			},
+			{
+				"content": "The lantern will break if hit by Bloodcurdling Shriek or Sonar Shriek.",
+				"is_correct": false
+			},
+			{
+				"content": "The lantern will break if hit by a bat spawned by Descent debuff.",
+				"is_correct": true
+			},
+			{
+				"content": "Shriekwing will destroy the lantern if it gets in the melee range.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does The Blood Lantern do in mythic Shriekwing encounter?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-lantern.png",
+		"answers": [
+			{
+				"content": "The lantern marks a spot in which additional Descent spells will be cast. If the lantern remains static for more than 10 seconds the bats will instead fixate on random players.",
+				"is_correct": false
+			},
+			{
+				"content": "It applies a buff to all players nearby that reduces damage taken from Bloodcurdling Shriek and Sonar Shriek. Without this buff both of those abilities are lethal.",
+				"is_correct": false
+			},
+			{
+				"content": "It applies a debuff to all players nearby that deals periodic damage but allows you to see the sonic rings spawned by the Shriekwing.",
+				"is_correct": true
+			}
+		]
 	}
 ]
