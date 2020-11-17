@@ -33,6 +33,38 @@
   },
   {
       "name": "Castle Nathria",
-      "category": "RAID"
+      "category": "RAID",
+      "bosses": [
+        {
+          "name": "Shriekwing"
+        },
+        {
+          "name": "Huntsman Altimor"
+        },
+        {
+          "name": "Hungering Destroyer"
+        },
+        {
+          "name": "Artificer Xy'Mox"
+        },
+        {
+          "name": "Sun King's Salvation"
+        },
+        {
+          "name": "Lady Inerva Darkvein"
+        },
+        {
+          "name": "The Council of Blood"
+        },
+        {
+          "name": "Sludgefist"
+        },
+        {
+          "name": "Stone Legion Generals"
+        },
+        {
+          "name": "Sire Denathrius"
+        }
+      ]
   }
 ]

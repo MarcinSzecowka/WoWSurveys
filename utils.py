@@ -6,9 +6,9 @@ from typing import List
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
-
+from uuid import UUID, uuid4
 from database import SessionLocal
-from entities import Question, Answer, Survey, SurveyResult, Instance, ShortId
+from entities import Question, Answer, Survey, SurveyResult, Instance, ShortId, Boss
 from model import SurveyAnswersRequest
 
 
@@ -20,13 +20,17 @@ def get_db():
         db.close()
 
 
-def generate_random_questions(db: Session, instance_name: str, category: str, question_count: int):
+def generate_random_questions(db: Session, instance_name: str, category: str, question_count: int, bosses: List[str]):
     all_questions = db.query(Question)\
         .filter(or_(Question.instance_name == instance_name, Question.category == category))\
         .all()
-    if question_count > len(all_questions):
-        return all_questions
-    return random.sample(all_questions, question_count)
+    all_questions_with_restrictions = all_questions
+    if bosses is not None:
+        all_questions_with_restrictions = list(filter(
+            lambda question: question.boss_name is None or question.boss_name in bosses, all_questions))
+    if question_count > len(all_questions_with_restrictions):
+        return all_questions_with_restrictions
+    return random.sample(all_questions_with_restrictions, question_count)
 
 
 def get_survey(db: Session, survey_id: str) -> SurveyResult:
@@ -56,7 +60,7 @@ def convert_answers_to_entities(answers):
     answers_list = []
     for answer in answers:
         answer_entity = Answer()
-        answer_entity.id = answer["id"]
+        answer_entity.id = str(uuid4())
         answer_entity.content = answer["content"]
         answer_entity.is_correct = answer["is_correct"]
         answers_list.append(answer_entity)
@@ -74,6 +78,11 @@ def initialize_instances(instances_data_name, db):
         instance_entity = Instance()
         instance_entity.name = instance["name"]
         instance_entity.category = instance["category"]
+        if instance.get("bosses") is not None:
+            for boss in instance["bosses"]:
+                boss_entity = Boss()
+                boss_entity.name = boss["name"]
+                instance_entity.bosses.append(boss_entity)
         db.add(instance_entity)
     try:
         db.commit()
@@ -83,17 +92,20 @@ def initialize_instances(instances_data_name, db):
 
 
 def initialize_questions(questions_data_name, db):
-    question_ids = get_questions_ids_from_database(db)
+    existing_questions_fingerprints = get_existing_questions_fingerprints(db)
     questions = load_data_from_file(questions_data_name)
     question_count = 0
     for question in questions:
-        if question["id"] not in question_ids:
-            question_entity = Question()
-            question_entity.id = question["id"]
-            question_entity.content = question["content"]
-            question_entity.instance_name = question.get("instance_name")
-            question_entity.category = question["category"]
-            question_entity.answers = convert_answers_to_entities(question["answers"])
+        question_entity = Question()
+        question_entity.id = str(uuid4())
+        question_entity.content = question["content"]
+        question_entity.instance_name = question.get("instance_name")
+        question_entity.category = question.get("category")
+        question_entity.boss_name = question.get("boss_name")
+        question_entity.image = question.get("image")
+        question_entity.answers = convert_answers_to_entities(question["answers"])
+        question_entity_fingerprint = question_entity.get_entity_fingerprint()
+        if question_entity_fingerprint not in existing_questions_fingerprints:
             db.add(question_entity)
             question_count += 1
     db.commit()
@@ -127,3 +139,11 @@ def generate_random_short_id(db: Session) -> str:
         if new_short_id not in all_short_ids:
             is_short_id_unique = True
     return new_short_id
+
+
+def get_existing_questions_fingerprints(db: Session):
+    questions = db.query(Question).all()
+    question_fingerprints = set()
+    for question in questions:
+        question_fingerprints.add(question.get_entity_fingerprint())
+    return question_fingerprints

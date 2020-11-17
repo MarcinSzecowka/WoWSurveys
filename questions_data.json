@@ -1,94 +1,598 @@
 [
 	{
-		"id": "4a49ca87-df20-4eaf-a624-74b0b8da4f50",
 		"content": "What does Inspiring affix do in mythic+?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "cd5b0bca-aa13-4a46-bd92-164ba4610e68",
 				"content": "Units with Inspired status effect buff nearby units increasing their health by 30% and damage done by 20%.",
 				"is_correct": false
 			},
 			{
-				"id": "26f40145-891c-4395-a8d4-d451bb8a7b99",
 				"content": "Units with Inspired status effect buff themselves which grants them immunity to crowd control effects.",
 				"is_correct": false
 			},
 			{
-				"id": "6a1faf7c-37e8-4cde-8515-cf6fb120cadd",
 				"content": "Units with Inspired status effect buff nearby units making them immune to crowd control effects.",
 				"is_correct": true
 			}
 		]
 	},
 	{
-		"id": "428566bc-0956-4646-932a-50e6208e28d1",
 		"content": "Who does Inspired mythic+ affix buff apply to?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "aa621f28-0d26-4e9e-bb81-4aaa53b6b82c",
 				"content": "It applies only to the owner of the buff.",
 				"is_correct": false
 			},
 			{
-				"id": "849edea0-d551-4539-8fad-9a5da6e244d2",
 				"content": "It applies only to the units nearby the owner of the buff.",
 				"is_correct": true
 			},
 			{
-				"id": "ac9c8a34-7eb2-474b-b887-03be77e1278c",
 				"content": "It applies to both owner of the buff and all nearby units.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "389783bd-317e-4807-925e-b83146a97c34",
 		"content": "Who does Spiteful affix do in mythic+?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "bc4e8411-c80e-4490-a7ac-a97bc3b27d54",
 				"content": "Killing non-boss enemies spawns shades that fixate on a random player.",
 				"is_correct": true
 			},
 			{
-				"id": "c402c624-68ae-4fdd-aee7-7770a2b30200",
 				"content": "Attacking an enemy marked with Spiteful buff increases the damage dealt by this enemy to all party members.",
 				"is_correct": false
 			},
 			{
-				"id": "ac2e6e70-64a9-4e8f-a0e0-3b457ddb0f59",
 				"content": "Additional enemies are present throughout the dungeon.",
 				"is_correct": false
 			}
 		]
 	},
 	{
-		"id": "486da191-7cbe-43ef-9a23-f87fd2447d9b",
 		"content": "What happens when you kill the Manifestation of Pride in a mythic+ dungeon?",
 		"category": "DUNGEON",
 		"answers": [
 			{
-				"id": "ed50d0c5-22f1-44bc-a085-639dac445452",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
 				"is_correct": false
 			},
 			{
-				"id": "84fed5fe-0749-447e-84f3-e13985868dcd",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and reduces damage taken by 15%. The buff lasts for 60 seconds.",
 				"is_correct": false
 			},
 			{
-				"id": "c278c324-ab50-4f22-bb26-806d456a9817",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60% and restores 5% of maximum mana per second. The buff lasts for 60 seconds.",
 				"is_correct": true
 			},
 			{
-				"id": "0c4e594a-8289-4205-be88-5e39baa4fa8d",
 				"content": "Entire party gains Prideful buff that increases the damage and healing done by 30%, movement speed by 60%. Additionally dealing damage when on full health grants a shield equal to 5% of the damage done. The shield starts to decay rapidly after 5 seconds. The Prideful buff lasts for 60 seconds.",
 				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does Necrotic mythic+ affix do?",
+		"category": "DUNGEON",
+		"answers": [
+			{
+				"content": "All enemies melee attacks and abilities apply a stacking blight that inflicts damage over time.",
+				"is_correct": false
+			},
+			{
+				"content": "All enemies melee attacks and abilities apply a stacking blight that reduces healing received.",
+				"is_correct": false
+			},
+			{
+				"content": "Bosses melee attacks apply a stacking blight that inflicts damage over time.",
+				"is_correct": false
+			},
+			{
+				"content": "All enemies melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "What does Bolstering mythic+ affix do?",
+		"category": "DUNGEON",
+		"answers": [
+			{
+				"content": "When non-boss enemies die they buff nearby allies increasing their maximum health and damage by 20%.",
+				"is_correct": true
+			},
+			{
+				"content": "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+				"is_correct": false
+			},
+			{
+				"content": "Bosses have 40% more health and inflict 15% more damage.",
+				"is_correct": false
+			},
+			{
+				"content": "Non-boss enemies have 40% more health and inflict 15% more damage.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "One of the enemies in this dungeon, Spiteclaw, has a buff called Dying Breath - what does it do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Spiteclaw.png",
+		"answers": [
+			{
+				"content": "When Spiteclaw dies it deals damage to all enemies in 10 yard radius.",
+				"is_correct": false
+			},
+			{
+				"content": "When Spiteclaw dies it curses all enemies nearby causing them to take 10% increased damage.",
+				"is_correct": true
+			},
+			{
+				"content": "When Spiteclaw casts his baseline ability Rake he also burns enemies in front of him.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does the Haverster do and how do you counter it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"content": "Harvester fixates on random player and tries to melee them dealing massive damage. You counter that by using crowd control abilities on the Harvester.",
+				"is_correct": false
+			},
+			{
+				"content": "Harvester channels an ability that deals damage to entire party. You counter that by interrupting the ability.",
+				"is_correct": true
+			},
+			{
+				"content": "Harvester casts an ability called Harvest which deals damage to the tank. You counter that by interrupting the spellcast.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does Soulcleaver do and how do you counter it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"answers": [
+			{
+				"content": "He channels an ability that deals high amount of damage and leaves the target stunned for 4 seconds after the damage has been dealt. You counter that by interrupting the spellcast.",
+				"is_correct": false
+			},
+			{
+				"content": "He jumps to the random party member dealing damage. You counter that by using crow control abilities on the Soulcleaver.",
+				"is_correct": false
+			},
+			{
+				"content": "He casts a spell that damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "The Villager channels a spell called Overgrowth. What does the spell do and how do you counter it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Villager.jpg",
+		"answers": [
+			{
+				"content": "The spell deals high amount of damage and leaves the target stunned for 4 seconds after the damage has been dealt. You counter that by interrupting the spellcast.",
+				"is_correct": true
+			},
+			{
+				"content": "At the end of the channel the Villager jumps to a random player and stuns them. You counter that by using crow control abilities on the Villager.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell damages the tank and leaves a debuff that increases damage taken. You counter that by dispeling the debuff from the tank or by interrupting the spellcast.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "The Villager casts a spell called Bewildering Pollen. The cast cannot be interrupted. What does the spell do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Villager.jpg",
+		"answers": [
+			{
+				"content": "The spell deals damage to all the players in 10 yard radius around the Villager and knocks back all players hit by the spell.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage to all players in front of the Villager and disorients all players hit by the spell.",
+				"is_correct": true
+			},
+			{
+				"content": "The spell deals damage to all the players in front of the Villager and knocks back all players hit by the spell.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage to all the players in 10 yard radius around the Villager.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does the Boughbreaker do once he falls below 50% health?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Boughbreaker.png",
+		"answers": [
+			{
+				"content": "He channels an uninterruptable spell that deals massive AoE damage to all enemies nearby.",
+				"is_correct": true
+			},
+			{
+				"content": "He casts an interruptable spell for 5 seconds. If the spell is cast sucessfully the Boughbreaker regenerates all his missing health in a period of 10 seconds.",
+				"is_correct": false
+			},
+			{
+				"content": "After a short delay he summons one additional unit that will fixate on a random player.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The Boughbreaker has two main abilities. One of them is cast once he falls below 50% health. What does the other ability do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "Boughbreaker.png",
+		"answers": [
+			{
+				"content": "Boughbreaker channels a spell for 10 seconds. At the end of a channel Boughbreaker gains massive shield. The spell is interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "Boughbreaker casts a spell that deals damage to all units in front of him knocking them back.",
+				"is_correct": false
+			},
+			{
+				"content": "Boughbreaker spawns black patches below the players. After a short delay the patches deal damage to players standing within them.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Who should you focus first in the first boss encounter in this dungeon and why?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-1st-boss.jpg",
+		"answers": [
+			{
+				"content": "You should focus Oulfarran (the blue guy) because Maloch deals damage based on how much damage he himself has taken recently.",
+				"is_correct": false
+			},
+			{
+				"content": "You should focus Oulfarran (the blue guy) because Maloch takes 80% reduced damage at the start of the fight.",
+				"is_correct": true
+			},
+			{
+				"content": "You should focus Maloch. Oulfarran (the blue guy) is a friendly unit that helps you throughout the fight.",
+				"is_correct": false
+			},
+			{
+				"content": "You should focus Maloch. Oulfarran (the blue guy) takes 80% reduced damage at the start of the fight.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What happens when Oulfarran (the blue guy) is taken down to 20% health?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-1st-boss.jpg",
+		"answers": [
+			{
+				"content": "He stuns Maloch and makes it so that Maloch takes 300% more damage.",
+				"is_correct": true
+			},
+			{
+				"content": "He stuns Maloch and drains his life for the duration of the stun.",
+				"is_correct": false
+			},
+			{
+				"content": "He explodes dealing damage to all units (including Maloch) in 20 yards range.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "There are 3 pathways to take, each one of them is marked with one of the symbols. Which path do you take?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-maze.png",
+		"answers": [
+			{
+				"content": "First",
+				"is_correct": false
+			},
+			{
+				"content": "Second",
+				"is_correct": false
+			},
+			{
+				"content": "Third",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "There are 4 pathways to take, each one of them is marked with one of the symbols. Which path do you take?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-maze-2.jpg",
+		"answers": [
+			{
+				"content": "First",
+				"is_correct": false
+			},
+			{
+				"content": "Second",
+				"is_correct": true
+			},
+			{
+				"content": "Third",
+				"is_correct": false
+			},
+			{
+				"content": "Fourth",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What should you do with the clones that Miscaller creates during the fight?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "You should only dodge the dodgeballs they create but ignore anything else.",
+				"is_correct": false
+			},
+			{
+				"content": "You should kill the clone that has a symbol with unique property.",
+				"is_correct": true
+			},
+			{
+				"content": "You should kill all clones except for the one with the symbol with unique property.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Who should interrupt the spell called Patty Cake casted by the Mistcaller?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "The tank should interrupt it.",
+				"is_correct": true
+			},
+			{
+				"content": "Any of the players can interrupt it.",
+				"is_correct": false
+			},
+			{
+				"content": "Only dps can interrupt it, tanks and healers must not.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The Mistaller summons a fox during a fight. What does the fox do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mistcaller.png",
+		"answers": [
+			{
+				"content": "The fox travels in the direction of the Mistcaller. If he reaches her the Mistaller releases a nova that deals damage to all players in the boss room.",
+				"is_correct": false
+			},
+			{
+				"content": "The fox fixates a random player. If anyone goes near the fox it explodes dealing massive damage to all players nearby.",
+				"is_correct": true
+			},
+			{
+				"content": "The fox leaps around the room dealing damage to all players until killed.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Acidgullet casts a spell called Volatile Acid. What does the spell do and how do you deal with it?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-slugs.jpg",
+		"answers": [
+			{
+				"content": "The spell deals damage in front of the caster and knocks back all units hit by the spell. It is interruptable so you should interrupt it.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage in front of the caster and knocks back all units hit by the spell. It can't be interrupted so you have to stun the Acidgullets during cast.",
+				"is_correct": false
+			},
+			{
+				"content": "The spell deals damage over time to the target. It can't be interrupted so you have to stun the Acidgullets during cast.",
+				"is_correct": true
+			},
+			{
+				"content": "The spell deals damage over time to the target. It is interruptable so you should interrupt it.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Tred'ova casts a spell called Mind Link. What does it do?",
+		"instance_name": "Mists of Tirna Scithe",
+		"image": "mists-tredova.jpg",
+		"answers": [
+			{
+				"content": "It links selected player with other players by a mind link. Mind link deals damage until the linked player moves far enough so that the link is broken.",
+				"is_correct": true
+			},
+			{
+				"content": "It links selected player with one other random player by a mind link. Mind link silences both players until they move far enough so that the link is broken.",
+				"is_correct": false
+			},
+			{
+				"content": "It links all players with a mind link. Mind link deals damage until all players move far enough from each other so that the link is broken.",
+				"is_correct": false
+			},
+			{
+				"content": "It links all players with a mind link. Mind link silences all targets players until all players move far enough from each other so that the link is broken.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The first boss of the Castle Nathria, Shriekwing, casts an ability called Bloodcurdling Shriek. What does it do?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "Shriekwing-EarsplittingShriek.png",
+		"answers": [
+			{
+				"content": "Inflicts lethal amount of damage to anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
+				"is_correct": true
+			},
+			{
+				"content": "Fears anyone in line of sight of the boss. Additionally all players leave Sanguine Ichor below them upon hearing the shriek, regardless of line of sight.",
+				"is_correct": false
+			},
+			{
+				"content": "All players in line of sight of the boss leave Sanguine Ichor below them. Sanguine Ichor deals a moderate amount of damage over time.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "When does Shriekwing transition into phase two?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing.png",
+		"answers": [
+			{
+				"content": "Once it falls below 50% health.",
+				"is_correct": false
+			},
+			{
+				"content": "After reaching 100 energy.",
+				"is_correct": true
+			},
+			{
+				"content": "After casting Bloodcurdling Shriek two times.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What should you do when marked with Echolocation while fighting Shriekwing?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "echolocation.jpg",
+		"answers": [
+			{
+				"content": "You should move into the raid since the damage is split into all targets around you.",
+				"is_correct": false
+			},
+			{
+				"content": "You should move out of the raid since the spell deals damage in all units around you.",
+				"is_correct": true
+			},
+			{
+				"content": "You should stand behind a pilar so you're not in line of sight of anyone. The spell deals damage to all players in line of sight.",
+				"is_correct": false
+			},
+			{
+				"content": "You should stand behind a pilar so you're not in line of sight of the boss. The spell deals increased damage if in line of sight with the Shriekwing.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What should you do right after Shriekwing transitions into second phase?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-2nd-phase.jpg",
+		"answers": [
+			{
+				"content": "You should avoid walking up to the boss and you should focus on dodging the orbs that will be spawned during this phase.",
+				"is_correct": true
+			},
+			{
+				"content": "You should focus on dealing as much damage as possible since the boss takes increased damage for the duration of the transition phase.",
+				"is_correct": false
+			},
+			{
+				"content": "You should walk into the sonar orbs to destroy them since those will not disappear when the transition phase ends.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "During transition phase Shriekwing casts a spell called Sonar Shriek? What does it do?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing.png",
+		"answers": [
+			{
+				"content": "It deals massive damage to all players within 20 yards of the boss.",
+				"is_correct": false
+			},
+			{
+				"content": "It spawns multiple sonar orbs around the boss.",
+				"is_correct": false
+			},
+			{
+				"content": "It deals massive damage to all players in line of sight of the boss.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Which spells and abilities in the Shriekwing encounter can destroy The Blood Lantern?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-lantern.png",
+		"answers": [
+			{
+				"content": "None of the abilities can destroy The Blood Lantern.",
+				"is_correct": false
+			},
+			{
+				"content": "The lantern will break if hit by Bloodcurdling Shriek or Sonar Shriek.",
+				"is_correct": false
+			},
+			{
+				"content": "The lantern will break if hit by a bat spawned by Descent debuff.",
+				"is_correct": true
+			},
+			{
+				"content": "Shriekwing will destroy the lantern if it gets in the melee range.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "What does The Blood Lantern do in mythic Shriekwing encounter?",
+		"category": "RAID",
+		"instance_name": "Castle Nathria",
+		"boss_name": "Shriekwing",
+		"image": "shriekwing-lantern.png",
+		"answers": [
+			{
+				"content": "The lantern marks a spot in which additional Descent spells will be cast. If the lantern remains static for more than 10 seconds the bats will instead fixate on random players.",
+				"is_correct": false
+			},
+			{
+				"content": "It applies a buff to all players nearby that reduces damage taken from Bloodcurdling Shriek and Sonar Shriek. Without this buff both of those abilities are lethal.",
+				"is_correct": false
+			},
+			{
+				"content": "It applies a debuff to all players nearby that deals periodic damage but allows you to see the sonic rings spawned by the Shriekwing.",
+				"is_correct": true
 			}
 		]
 	}

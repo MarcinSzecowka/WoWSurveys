@@ -34,8 +34,6 @@ body {
 
 #dungeon_form {
     background-color: #404040;
-    margin-left: 40em;
-    margin-right: 40em;
     border-radius: 0.5em;
 }
 
@@ -48,6 +46,18 @@ body {
     color: #292929;
     width: 10em;
     background-color: #ffb300;
+}
+
+.button-wide:focus {
+    outline: none;
+    box-shadow: none;
+    color: #292929;
+    background-color: #ffb300;
+}
+
+.button-wide:hover {
+    color: #dbdbdb;
+    background-color: #404040;
 }
 
 .input-wide {
@@ -94,26 +104,36 @@ body {
 }
 
 #btn_copy {
+    position: absolute;
+    right: -1px;
     border-radius: 2em;
     color: #292929;
-    width: 7em;
+    width: 8em;
     background-color: #ffb300;
 }
 
 #btn_copy:hover {
     border-radius: 2em;
     color: #dbdbdb;
-    width: 7em;
+    width: 8em;
     background-color: #404040;
 }
 
-#share_link {
+#share_link_parent {
     background-color: #404040;
     color: #dbdbdb;
     border-radius: 2em;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     text-align-last:center;
+}
+
+#share_link {
+    min-height: 2.3em;
+    background-color: rgba(0, 0, 0, 0);
+    color: #dbdbdb;
+    border: none;
+    border-radius: 2em;
 }
 
 #share_link:focus {
@@ -173,6 +193,7 @@ body {
 
 .form-check {
     width: 100%;
+    padding-left: 0em;
 }
 
 #nickname {
@@ -187,4 +208,69 @@ body {
     font-weight bold;
     font-size: 150%;
     color: #ffb300;
+}
+
+.form-warning {
+    color: red;
+}
+
+ul > .is-invalid {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+}
+
+ul > .is-invalid:first-child {
+    border-top: 1px solid red;
+}
+
+ul > .is-invalid:last-child {
+    border-bottom: 1px solid red;
+}
+
+.boss-label {
+    width: 100%;
+    padding-left: 1em;
+    background-color: #404040;
+    color: #dbdbdb;
+}
+
+.boss-checkbox {
+    display:none;
+}
+
+/* Label is unchecked */
+.boss-checkbox + label > #checked-icon{
+    display: none;
+}
+
+.boss-checkbox + label > #unchecked-icon{
+    display: inline;
+}
+
+/* Label is checked */
+.boss-checkbox:checked + label > #unchecked-icon {
+    display: none;
+}
+
+.boss-checkbox:checked + label > #checked-icon {
+    display: inline;
+    color: #ffb300;
+}
+
+.boss-checkbox:checked + label {
+    color: #dbdbdb;
+}
+
+#fix {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#fix2 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.question_image {
+    border-radius: 10px;
 }
