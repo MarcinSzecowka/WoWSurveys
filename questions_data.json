@@ -442,6 +442,200 @@
 		]
 	},
 	{
+		"content": "Cultists encountered during the very first part of the dungeon cast a spell called Dark Lotus. What does it do, and can it be interrupted?",
+		"instance_name": "De Other Side",
+		"image": "Cultist.PNG",
+		"answers": [
+			{
+				"content": "It spawns flowers on the ground that deal massive amounts of shadow damage to players within 5 yards. It is interruptable.",
+				"is_correct": true
+			},
+			{
+				"content": "It spawns flowers on the ground that deal massive amounts of shadow damage to players within 5 yards. It is not interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a targeted spell that always focuses the player with the highest amount of threat. It is interruptable and reflectable.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a targeted spell that always focuses the player with the highest amount of threat. It is not interruptable and not reflectable.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Cultists encountered throughout the dungeon cast a spell called Scribe. What does it do, and can it be interrupted?",
+		"instance_name": "De Other Side",
+		"image": "Cultist.PNG",
+		"answers": [
+			{
+				"content": "It spawns flowers on the ground that deal massive amounts of shadow damage to players within 5 yards. It is interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "It spawns flowers on the ground that deal massive amounts of shadow damage to players within 5 yards. It is not interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a targeted spell that always focuses the player with the highest amount of threat. It is interruptable and reflectable.",
+				"is_correct": true
+			},
+			{
+				"content": "It is a targeted spell that always focuses the player with the highest amount of threat. It is not interruptable and not reflectable.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Bonesoldiers encountered throughout the dungeon cast a spell called Trollguard. What does it do, and can it be interrupted?",
+		"instance_name": "De Other Side",
+		"image": "Bonesoldier.PNG",
+		"answers": [
+			{
+				"content": "It is a frontal ability that deals high amount of shadow damage. It is not interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a frontal ability that knocks back all players that it hits. It is not interruptable.",
+				"is_correct": true
+			},
+			{
+				"content": "It is a frontal ability that deals high amount of shadow damage. It is interruptable.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Warlords encountered throughout the dungeon cast a spell called Undying Rage. What does it do, and can it be dispelled?",
+		"instance_name": "De Other Side",
+		"image": "Warlord.PNG",
+		"answers": [
+			{
+				"content": "It grants all surrounding allied units a buff to both HP, and damage. It can be dispelled, and is interruptable.",
+				"is_correct": false
+			},
+			{
+				"content": "It grants the warlord a buff, which increases its damage until its death. It cannot be dispelled.",
+				"is_correct": false
+			},
+			{
+				"content": "It grants the warlord a buff, which increases its damage, and prevents its death for 12 seconds. It can be dispelled.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "When fighting a Warlord which of the following should you make sure of?",
+		"instance_name": "De Other Side",
+		"image": "Warlord.PNG",
+		"answers": [
+			{
+				"content": "To avoid his abilities, as all of them inflict a lethal bleed effect.",
+				"is_correct": true
+			},
+			{
+				"content": "To never stand close to it, as all of its melee attacks cleave nearby targets.",
+				"is_correct": false
+			},
+			{
+				"content": "To stand far away from it, as it periodically fixates on a random player.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "Skeletal Raptors have only one ability, called Decrepit Bite. What does it do?",
+		"instance_name": "De Other Side",
+		"image": "Raptor.PNG",
+		"answers": [
+			{
+				"content": "Applies a debuff which makes the target more vulnerable to their subsequent attacks.",
+				"is_correct": false
+			},
+			{
+				"content": "Applies a stacking debuff which inflicts nature damage every second.",
+				"is_correct": true
+			},
+			{
+				"content": "Applies a stacking debuff which slows the target, and makes the target more vulnerable to subsequent attacks.",
+				"is_correct": false
+			}
+		]
+	},
+	{
+		"content": "The Death Speaker is an enemy encountered throughout the dungeon. It casts a spell called Erupting Darkness. What is it, and how do you counter it?",
+		"instance_name": "De Other Side",
+		"image": "Speaker.PNG",
+		"answers": [
+			{
+				"content": "It is a massive aoe around the speaker that knocks back players and deals lethal amount of damage. You can counter it by standing far away, or stepping away during its cast.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a targeted spell that deals a moderate amount of damage. You counter it by interrupting the cast.",
+				"is_correct": false
+			},
+			{
+				"content": "It is a frontal ability cast in a random direction. It deals lethal amounts of damage and knocks back all players in its path. You counter it by moving sideways, away from the front of the Speaker",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Enraged Spirit has an ability called Enraged Mask. What does it do?",
+		"instance_name": "De Other Side",
+		"image": "Spirit.PNG",
+		"answers": [
+			{
+				"content": "It periodically deals shadow damage to all nearby players, and increases the Spirit's damage.",
+				"is_correct": false
+			},
+			{
+				"content": "It grants the Spirit a buff, that reflects a flat amount of damage to the tank for each attack that the spirit gets hit with.",
+				"is_correct": false
+			},
+			{
+				"content": "It deals shadow damage to all players, and periodically spawns additional enemies.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Enraged Spirit has an ability called Rage. What does it do?",
+		"instance_name": "De Other Side",
+		"image": "Spirit.PNG",
+		"answers": [
+			{
+				"content": "It periodically deals high amounts of shadow damage to all nearby enemies.",
+				"is_correct": false
+			},
+			{
+				"content": "It grants the Spirit a buff, that increases the Spirit's damage and attack speed.",
+				"is_correct": false
+			},
+			{
+				"content": "It deals shadow damage to all nearby enemies, and periodically spawns additional enemies.",
+				"is_correct": true
+			}
+		]
+	},
+	{
+		"content": "Which of these statements about Enraged Mask is true?",
+		"instance_name": "De Other Side",
+		"image": "Spirit.PNG",
+		"answers": [
+			{
+				"content": "It is an enemy spawned by an Enraged Spirit. It explodes after a long cast, dealing lethal amount of damage to enemies within a short range. It despawns when stunned.",
+				"is_correct": true
+			},
+			{
+				"content": "It is a buff that the Enraged Spirit gains after a long cast. The buff increases the Spirit's damage, attack speed and reflects a flat amount of damage to the tank for each attack that the spirit gets hit with.",
+				"is_correct": false
+			}
+		]
+	},
+	{
 		"content": "The first boss of the Castle Nathria, Shriekwing, casts an ability called Bloodcurdling Shriek. What does it do?",
 		"category": "RAID",
 		"instance_name": "Castle Nathria",
